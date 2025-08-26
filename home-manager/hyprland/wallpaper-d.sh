@@ -1,3 +1,4 @@
+#!/run/current-system/sw/bin/bash
 # WALLPAPER MANAGER
 while :; do
   if [[ $(date +%T) < 19:00:00 ]] || [[ $(date +%T) > 6:00:00 ]] && [[ $(date +%T) > 0:59:59 ]]; then # before 7 PM and after 6 AM (daytime)
