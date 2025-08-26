@@ -103,6 +103,17 @@
         "alt, mouse_down, workspace, e-1"
         "alt, mouse_up, workspace, e+1"
 
+        "control SHIFT, 1, movetoworkspace, 1"
+        "control SHIFT, 2, movetoworkspace, 2"
+        "control SHIFT, 3, movetoworkspace, 3"
+        "control SHIFT, 3, movetoworkspace, special:magic"
+        "control SHIFT, 4, movetoworkspace, 4"
+        "control SHIFT, 5, movetoworkspace, 5"
+        "control SHIFT, 6, movetoworkspace, 6"
+        "control SHIFT, 7, movetoworkspace, 7"
+        "control SHIFT, 8, movetoworkspace, 8"
+        "control SHIFT, 9, movetoworkspace, 9"
+
         # Hide Special workspaces if active
         # Taken from https://www.reddit.com/r/hyprland/comments/1b6bf39/comment/ktfscyz/
         "control, 1, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
