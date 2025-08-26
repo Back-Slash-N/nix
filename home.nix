@@ -28,6 +28,8 @@
     pavucontrol # Volume Control
     kdePackages.kdenlive # Video Editor
     bs-manager # Beat Saber Mod Manager
+    supersonic # Music player
+    iwgtk # Wi-Fi manager
   ];
 
   imports = [
@@ -47,6 +49,7 @@
     # ./home-manager/quickshell/quickshell.nix
     ./home-manager/vscode/vscode.nix
     ./home-manager/steam/steam.nix
+    ./home-manager/waybar/waybar.nix
   ];
 
   # Secret Management
