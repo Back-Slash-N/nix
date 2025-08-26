@@ -1,4 +1,4 @@
-{config, ...}:
+{ config, pkgs, ... }:
 let
   wallpaperImg = ../wallpapers/connor.png;
 in {
@@ -11,4 +11,7 @@ in {
       wantedBy = [ "plasma-workspace.target" ];
       after = [ "plasma-workspace.target" ];
     };
+  networking.networkmanager.plugins = with pkgs; [
+    networkmanager-openvpn
+  ];
 }
