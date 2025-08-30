@@ -34,7 +34,6 @@
 
   imports = [
     # ./home-manager/default-applications.nix
-    ./home-manager/bash.nix
     ./home-manager/firefox.nix
     ./home-manager/git.nix
     ./home-manager/kitty.nix
@@ -50,6 +49,7 @@
     ./home-manager/vscode/vscode.nix
     ./home-manager/steam/steam.nix
     ./home-manager/waybar/waybar.nix
+    ./home-manager/zsh.nix
   ];
 
   # Secret Management

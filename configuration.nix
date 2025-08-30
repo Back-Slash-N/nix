@@ -16,6 +16,12 @@
       ./system-configuration/sops/sops.nix
     ];
 
+  # Shell
+  programs.bash.enable = true;
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+  environment.pathsToLink = [ "/share/zsh" ];
+
   networking.hostName = "desktop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -96,6 +102,7 @@
       IdentityFile ~/.ssh/github
     '';
   };
+
   services.pcscd.enable = true;
   programs.gnupg.agent = {
     enable = true;
