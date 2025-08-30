@@ -47,9 +47,9 @@
       exec-once = [
         "systemctl --user start hyprpolkitagent"
         "~/.wallpapers/wallpaper-d.sh"
-        "[workspace 1 silent] code"
+        "[workspace 1 silent] codium"
         "[workspace 2 silent] firefox"
-        "[workspace 5 silent] kitty tmux"
+        "[workspace 5 silent] kitty"
         "[workspace special:magic silent] vesktop"
       ];
 
@@ -62,7 +62,7 @@
         "SUPER, SUPER_L, exec, pkill rofi || rofi -show drun"
 
         # Terminal Shortcut
-        "$mod, q, exec, $terminal tmux"
+        "$mod, q, exec, $terminal"
 
         # Selective Screenshot
         ", Print, exec, ~/.config/hypr/scripts/screenshot rc"
@@ -180,8 +180,8 @@
       };
 
       windowrule = [
-        "opacity .95 override .95, class:Code"
-        "workspace 1, class:Code"
+        "opacity .95 override .95, class:VSCodium"
+        "workspace 1, class:VSCodium"
         "bordercolor rgb(6600a1) rgb(ff5100) 0deg rgb(6600a1) rgb(ff5100) 0deg,floating:1"
         "workspace special:magic, class:vesktop"
         "bordersize 0, pinned:1"
