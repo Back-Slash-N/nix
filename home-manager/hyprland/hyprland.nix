@@ -30,6 +30,9 @@
   programs.rofi = {
     enable = true;
     theme = "material";
+    extraConfig = {
+      ssh-command = "kitty tmux new-session {ssh-client} {host} [-p {port}]";
+    };
   };
 
   home.pointerCursor = {
