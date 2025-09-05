@@ -14,7 +14,7 @@
     };
 
     millennium = {
-      url = "git+https://github.com/SteamClientHomebrew/Millennium?ref=next";
+      url = "git+https://github.com/Trivaris/Millennium?ref=nix-update";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

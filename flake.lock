@@ -168,11 +168,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1756837205,
-        "narHash": "sha256-D+Ne2PjpPJ1O2SUg7ChXGGd7UBhsZm8lKON1MP8cfUQ=",
+        "lastModified": 1756842514,
+        "narHash": "sha256-XbtRMewPGJwTNhBC4pnBu3w/xT1XejvB0HfohC2Kga8=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a1316b0a77ef3e082a75bc5dc685c249b3c25f2c",
+        "rev": "30fc1b532645a21e157b6e33e3f8b4c154f86382",
         "type": "github"
       },
       "original": {
@@ -450,19 +450,19 @@
         ]
       },
       "locked": {
-        "lastModified": 1753651942,
-        "narHash": "sha256-OD4Ruig1z/oX1xvQh1gW9tu90tD9XxdcApyKrcAV86k=",
-        "ref": "next",
-        "rev": "ab8a7e4f0059faef2579db1fa3b085ce0e40627c",
-        "revCount": 1990,
+        "lastModified": 1756833776,
+        "narHash": "sha256-m/nSouqgXd8dYwHhVoj6a6/0Y51qCF7PanCIrZaZHb4=",
+        "ref": "nix-update",
+        "rev": "0c38cb268f4c87eda949e560a00b86713a8c4816",
+        "revCount": 2067,
         "submodules": true,
         "type": "git",
-        "url": "https://github.com/SteamClientHomebrew/Millennium"
+        "url": "https://github.com/Trivaris/Millennium"
       },
       "original": {
-        "ref": "next",
+        "ref": "nix-update",
         "type": "git",
-        "url": "https://github.com/SteamClientHomebrew/Millennium"
+        "url": "https://github.com/Trivaris/Millennium"
       }
     },
     "nixcord": {
