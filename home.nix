@@ -19,7 +19,6 @@
     bottles # Wine
     jdk21 # J*va
     quickemu # Easy VM management
-    gimp
     lazygit
     sidequest
     uget
@@ -44,6 +43,7 @@
     ./home-manager/tmux.nix
     ./home-manager/discord/nixcord.nix
     ./home-manager/fastfetch/fastfetch.nix
+    ./home-manager/gimp/gimp.nix
     ./home-manager/hyprland/hyprland.nix
     # ./home-manager/quickshell/quickshell.nix
     ./home-manager/vscode/vscode.nix
