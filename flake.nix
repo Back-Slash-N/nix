@@ -2,7 +2,12 @@
   description = "NixOS configuration with Home Manager";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+
+    home-manager = {
+      url = "github:nix-community/home-manager/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     flake-utils = {
       url = "github:numtide/flake-utils";
@@ -15,11 +20,6 @@
 
     millennium = {
       url = "git+https://github.com/Trivaris/Millennium?ref=nix-update";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    home-manager = {
-      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
