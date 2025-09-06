@@ -8,16 +8,30 @@
       ./hardware-configuration.nix
       ./system-configuration/bootloader.nix
       ./system-configuration/steam.nix
-      ./system-configuration/tailscale.nix
+      # ./system-configuration/tailscale.nix
       # ./system-configuration/kde.nix
       # ./system-configuration/sddm.nix
       ./system-configuration/virtual-machines.nix
+      ./system-configuration/vr.nix
       ./system-configuration/greeter/greeter.nix
       ./system-configuration/sops/sops.nix
     ];
 
+  #! TEMP FIX: KERNEL REGRESSION CAUSES TAILSCALE BUILD TO FAIL.
+  boot.kernelPatches = [
+    # Fix the /proc/net/tcp seek issue
+    # Impacts tailscale: https://github.com/tailscale/tailscale/issues/16966
+    {
+      name = "proc: fix missing pde_set_flags() for net proc files";
+      patch = pkgs.fetchurl {
+        name = "fix-missing-pde_set_flags-for-net-proc-files.patch";
+        url = "https://patchwork.kernel.org/project/linux-fsdevel/patch/20250821105806.1453833-1-wangzijie1@honor.com/raw/";
+        hash = "sha256-DbQ8FiRj65B28zP0xxg6LvW5ocEH8AHOqaRbYZOTDXg=";
+      };
+    }
+  ];
+
   # Shell
-  programs.bash.enable = true;
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   environment.pathsToLink = [ "/share/zsh" ];
@@ -110,45 +124,6 @@
     enableSSHSupport = false;
   };
 
-  # VR
-  # services.wivrn = {
-  #   enable = true;
-  #   openFirewall = true;
-  #   defaultRuntime = true;
-  # # Config for WiVRn (https://github.com/WiVRn/WiVRn/blob/master/docs/configuration.md)
-  #   config = {
-  #     enable = true;
-  #     json = {
-  #       # 1.0x foveation scaling
-  #       scale = 1.0;
-  #       # 70 Mb/s
-  #       bitrate = 70000000;
-  #       encoders = [
-  #         {
-  #           encoder = "vulkan";
-  #           codec = "h264";
-  #           # 1.0 x 1.0 scaling
-  #           width = 1.0;
-  #           height = 1.0;
-  #           offset_x = 0.0;
-  #           offset_y = 0.0;
-  #         }
-  #       ];
-  #     };
-  #   };
-  # };
-
-  boot.kernelPatches = [
-    {
-      name = "amdgpu-ignore-ctx-privileges";
-      patch = pkgs.fetchpatch {
-        name = "cap_sys_nice_begone.patch";
-        url = "https://github.com/Frogging-Family/community-patches/raw/master/linux61-tkg/cap_sys_nice_begone.mypatch";
-        hash = "sha256-Y3a0+x2xvHsfLax/uwycdJf3xLxvVfkfDVqjkxNaYEo=";
-      };
-    }
-  ];
-
   programs.adb.enable = true;
 
   programs.nix-ld.enable = true;
@@ -160,7 +135,6 @@
   environment.systemPackages = with pkgs; [
     wget
     protonup-qt
-    tailscale
     gnupg
     wlx-overlay-s
   ];
