@@ -11,7 +11,6 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    alvr # VR
     lutris
     gale
     qbittorrent
@@ -29,6 +28,7 @@
     bs-manager # Beat Saber Mod Manager
     supersonic # Music player
     iwgtk # Wi-Fi manager
+    btop # Process viewer/manager
   ];
 
   imports = [
