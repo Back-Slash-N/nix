@@ -32,7 +32,6 @@
         betterSessions.enable = true;
         callTimer.enable = true;
         clearURLs.enable = true;
-        dearrow.enable = true;
         disableCallIdle.enable = true;
         experiments.enable = true;
         fakeNitro.enable = true;
