@@ -137,6 +137,7 @@
     protonup-qt
     gnupg
     wlx-overlay-s
+    ntfs3g # for interacting with NTFS filesystems
   ];
   # List services that you want to enable:
 
