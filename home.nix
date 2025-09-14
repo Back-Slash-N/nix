@@ -13,6 +13,7 @@
   home.packages = with pkgs; [
     lutris
     gale
+    r2modman
     qbittorrent
     vpkedit
     bottles # Wine
@@ -29,6 +30,7 @@
     supersonic # Music player
     iwgtk # Wi-Fi manager
     btop # Process viewer/manager
+    # (callPackage ./packages/soundboard.nix { })
   ];
 
   imports = [
@@ -41,7 +43,7 @@
     ./home-manager/notification-daemon.nix
     ./home-manager/obs.nix
     ./home-manager/tmux.nix
-    ./home-manager/discord/nixcord.nix
+    ./home-manager/discord/discord.nix
     ./home-manager/fastfetch/fastfetch.nix
     ./home-manager/gimp/gimp.nix
     ./home-manager/hyprland/hyprland.nix
@@ -60,6 +62,7 @@
     defaultSecretsMountPoint = "/run/user/1000/secrets.d";
     age.keyFile = "/home/n/.config/sops/age/keys.txt";
     secrets.discord-token = { path = "${config.sops.defaultSymlinkPath}/discord-token"; };
+    secrets.lastfm-token = { path = "${config.sops.defaultSymlinkPath}/lastfm-token"; };
   };
 
 

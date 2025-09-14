@@ -1,0 +1,18 @@
+{
+    "splashColor": "rgb(219, 220, 223)",
+    "minimizeToTray": false,
+    "hardwareVideoAcceleration": true,
+    "arRPC": true,
+    "openLinksWithElectron": false,
+    "appBadge": true,
+    "disableSmoothScroll": false,
+    "disableMinSize": false,
+    "clickTrayToShowHide": false,
+    "tray": true,
+    "splashTheming": true,
+    "enableSplashScreen": true,
+    "enableMenu": false,
+    "staticTitle": false,
+    "customTitleBar": false,
+    "hardwareAcceleration": true
+}
