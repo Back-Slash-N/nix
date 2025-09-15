@@ -279,11 +279,11 @@
     },
     "IgnoreActivities": {
       "allowedIds": null,
-      "enabled": false,
+      "enabled": true,
       "idsList": "",
       "ignoreCompeting": false,
       "ignoreListening": false,
-      "ignorePlaying": false,
+      "ignorePlaying": true,
       "ignoreStreaming": false,
       "ignoreWatching": false,
       "listMode": 0
@@ -331,11 +331,12 @@
       "nameFormat": "song-first",
       "shareSong": true,
       "shareUsername": true,
-      "showLastFmLogo": true,
+      "showLastFmLogo": false,
       "statusName": "some music",
       "useListeningStatus": true,
       "username": "BackSlashN",
-      "hideWithActivity": false
+      "hideWithActivity": false,
+      "statusDisplayType": "off"
     },
     "LoadingQuotes": {
       "additionalQuotes": "",
@@ -351,7 +352,8 @@
     "MemberCount": {
       "enabled": true,
       "memberList": true,
-      "toolTip": true
+      "toolTip": true,
+      "voiceActivity": true
     },
     "MemberListDecoratorsAPI": {
       "enabled": true
@@ -736,7 +738,10 @@
     },
     "ShowMeYourName": {
       "enabled": true,
-      "mode": "user-nick"
+      "mode": "user-nick",
+      "friendNicknames": "dms",
+      "displayNames": false,
+      "inReplies": false
     },
     "ShowTimeoutDuration": {
       "displayStyle": "ssalggnikool",
@@ -974,6 +979,6 @@
     "authenticated": false,
     "url": "https://api.vencord.dev/",
     "settingsSync": false,
-    "settingsSyncVersion": 1757870446206
+    "settingsSyncVersion": 1757950597124
   }
 }
