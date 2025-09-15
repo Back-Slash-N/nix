@@ -4,7 +4,9 @@
 , lib
 , sops-nix
 , ... }:
-
+let
+  amplitude = pkgs.callPackage ./packages/soundboard.nix { };
+in
 {
   home.username = "n";
   home.homeDirectory = "/home/n";
@@ -30,7 +32,7 @@
     supersonic # Music player
     iwgtk # Wi-Fi manager
     btop # Process viewer/manager
-    # (callPackage ./packages/soundboard.nix { })
+    amplitude
   ];
 
   imports = [
