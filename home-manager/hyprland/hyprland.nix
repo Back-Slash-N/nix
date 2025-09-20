@@ -76,6 +76,9 @@
         # OBS Clip Hotkey
         ", F8, pass, class:^(com\.obsproject\.Studio)$"
 
+        # Fullscreen application
+        "alt, F11, fullscreen, 1"
+
         # Execution
         ", code:87, exec, ~/.discord-slasher.sh 0" # Orsell
         ", code:88, exec, ~/.discord-slasher.sh 1" # Bob
