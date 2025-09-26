@@ -18,11 +18,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixcord = {
-      url = "github:kaylorben/nixcord";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -49,7 +44,6 @@
             home-manager.useUserPackages = true;
             home-manager.users.n = import ./home.nix;
             home-manager.sharedModules = [
-              inputs.nixcord.homeModules.nixcord
               inputs.sops-nix.homeManagerModule
             ];
             home-manager.extraSpecialArgs = { inherit inputs; };

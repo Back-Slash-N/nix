@@ -9,7 +9,10 @@
     "betterusertags.theme.css",
     "pingedserversfirst.theme.css",
     "randomfixes.theme.css",
-    "shadows.theme.css"
+    "shadows.theme.css",
+    "profilepopout.css",
+    "sidebarcat.css",
+    "transparentfixes.css"
   ],
   "enableReactDevtools": false,
   "frameless": false,

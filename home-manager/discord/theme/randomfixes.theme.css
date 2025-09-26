@@ -4,6 +4,12 @@
  * @description a random collection of small fixes
 */
 
+/* Hide elements where data-list-item-id contains "nitro" or "shop" */
+a[data-list-item-id*="nitro"],
+a[data-list-item-id*="shop"] {
+    display: none !important;
+}
+
 /* fix size/spacing of message header icons */
 .vc-platform-indicator,
 [class^=nitroBadgeSvg_]
