@@ -14,7 +14,7 @@
     };
 
     millennium = {
-      url = "git+https://github.com/Back-Slash-N/Millennium?ref=nix-update";
+      url = "git+https://github.com/Back-Slash-N/Millennium?ref=main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

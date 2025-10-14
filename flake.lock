@@ -8,11 +8,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1758879217,
-        "narHash": "sha256-vWk2iw/i5c0RHc/zLVyB51UYvmbzPq3uB14NN7kaouE=",
+        "lastModified": 1759809815,
+        "narHash": "sha256-A/XECNG6gVdVKsiWwPI8YS3LXM7sHKshDaCPaX6327E=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "58402e09ad48f9f509d9249b8704c1a4f390c434",
+        "rev": "d0e91a86a8db15a83ae9afb37809f392fced941c",
         "type": "gitlab"
       },
       "original": {
@@ -87,28 +87,28 @@
         ]
       },
       "locked": {
-        "lastModified": 1758652866,
-        "narHash": "sha256-m/nSouqgXd8dYwHhVoj6a6/0Y51qCF7PanCIrZaZHb4=",
-        "ref": "nix-update",
-        "rev": "7266d35ca363c0b7d07ecca2741a2faf732ae973",
-        "revCount": 2067,
+        "lastModified": 1759690124,
+        "narHash": "sha256-TtOQms0VeUlhZ0+gHAsbrA/ALsL8wjZvzOhXsvdoWb8=",
+        "ref": "main",
+        "rev": "1a984b858fcb5ce76f9e6dc8076c44bbe14023f5",
+        "revCount": 2078,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/Back-Slash-N/Millennium"
       },
       "original": {
-        "ref": "nix-update",
+        "ref": "main",
         "type": "git",
         "url": "https://github.com/Back-Slash-N/Millennium"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1758791193,
-        "narHash": "sha256-F8WmEwFoHsnix7rt290R0rFXNJiMbClMZyIC/e+HYf0=",
+        "lastModified": 1759735786,
+        "narHash": "sha256-a0+h02lyP2KwSNrZz4wLJTu9ikujNsTWIC874Bv7IJ0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "25e53aa156d47bad5082ff7618f5feb1f5e02d01",
+        "rev": "20c4598c84a671783f741e02bf05cbfaf4907cff",
         "type": "github"
       },
       "original": {
@@ -150,11 +150,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758425756,
-        "narHash": "sha256-L3N8zV6wsViXiD8i3WFyrvjDdz76g3tXKEdZ4FkgQ+Y=",
+        "lastModified": 1759635238,
+        "narHash": "sha256-UvzKi02LMFP74csFfwLPAZ0mrE7k6EiYaKecplyX9Qk=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "e0fdaea3c31646e252a60b42d0ed8eafdb289762",
+        "rev": "6e5a38e08a2c31ae687504196a230ae00ea95133",
         "type": "github"
       },
       "original": {
