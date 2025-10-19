@@ -41,6 +41,7 @@ in
     ./home-manager/firefox.nix
     ./home-manager/git.nix
     ./home-manager/kitty.nix
+    ./home-manager/mprisence.nix
     ./home-manager/nemo.nix
     ./home-manager/nh.nix
     ./home-manager/notification-daemon.nix
@@ -65,7 +66,6 @@ in
     defaultSecretsMountPoint = "/run/user/1000/secrets.d";
     age.keyFile = "/home/n/.config/sops/age/keys.txt";
     secrets.discord-token = { path = "${config.sops.defaultSymlinkPath}/discord-token"; };
-    secrets.lastfm-token = { path = "${config.sops.defaultSymlinkPath}/lastfm-token"; };
   };
 
 

@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixcord = {
+      url = "github:kaylorben/nixcord";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -49,6 +54,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.n = import ./home.nix;
             home-manager.sharedModules = [
+              inputs.nixcord.homeModules.nixcord
               inputs.sops-nix.homeManagerModule
             ];
             home-manager.extraSpecialArgs = { inherit inputs; };

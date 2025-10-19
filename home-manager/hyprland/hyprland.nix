@@ -50,6 +50,7 @@
       exec-once = [
         "systemctl --user start hyprpolkitagent"
         "~/.wallpapers/wallpaper-d.sh"
+        "mprisence"
         "[workspace 1 silent] codium"
         "[workspace 2 silent] firefox"
         "[workspace 5 silent] kitty"
