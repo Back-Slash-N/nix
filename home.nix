@@ -32,7 +32,8 @@ in
     supersonic # Music player
     iwgtk # Wi-Fi manager
     btop # Process viewer/manager
-    amplitude
+    amplitude # Soundboard
+    antimicrox # Game input remapper
   ];
 
   imports = [
