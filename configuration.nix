@@ -91,7 +91,7 @@
     isNormalUser = true;
     initialPassword = "n"; # CHANGE THIS AFTER INSTALL!!
     description = "n";
-    extraGroups = [ "networkmanager" "wheel" "adbusers" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" "libvirtd" "docker" ];
   };
 
   # Enable key-signing
@@ -117,6 +117,10 @@
     skia
   ];
 
+  virtualisation.docker = {
+    enable = true;
+  };
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     wget
@@ -124,6 +128,7 @@
     gnupg
     wlx-overlay-s
     ntfs3g # for interacting with NTFS filesystems
+    freerdp
   ];
   # List services that you want to enable:
 

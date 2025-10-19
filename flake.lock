@@ -140,7 +140,8 @@
         "home-manager": "home-manager",
         "millennium": "millennium",
         "nixpkgs": "nixpkgs",
-        "sops-nix": "sops-nix"
+        "sops-nix": "sops-nix",
+        "winboat": "winboat"
       }
     },
     "sops-nix": {
@@ -175,6 +176,26 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "winboat": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760625716,
+        "narHash": "sha256-Lf8kR10j/VDlNBfLJENA7jDUPOYfAd0ZUqPwyMncO2M=",
+        "owner": "TibixDev",
+        "repo": "winboat",
+        "rev": "dab50fb60487f7d47d82c6857c7be9582314c481",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TibixDev",
+        "repo": "winboat",
         "type": "github"
       }
     }
