@@ -103,6 +103,7 @@
         youtubeAdblock.enable = true;
         webRichPresence.enable = true;
         webScreenShareFixes.enable = true;
+        sendTimestamps.enable = true;
 
         customIdle = {
           enable = true;
