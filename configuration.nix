@@ -15,6 +15,9 @@
       ./system-configuration/vr.nix
       ./system-configuration/greeter/greeter.nix
       ./system-configuration/sops/sops.nix
+
+      # Overlays
+      ./overlays/freetube.nix
     ];
 
   # Shell

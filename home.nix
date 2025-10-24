@@ -34,6 +34,7 @@ in
     btop # Process viewer/manager
     amplitude # Soundboard
     antimicrox # Game input remapper
+    freetube # Youtube without the ads and tracking bs
   ];
 
   imports = [
