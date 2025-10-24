@@ -4,7 +4,6 @@
   environment.systemPackages = with pkgs; [
     spice-gtk
     virt-manager
-    inputs.winboat.packages.${system}.winboat
   ];
 
   # Enable Virt-manager

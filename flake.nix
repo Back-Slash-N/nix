@@ -1,13 +1,9 @@
 {
-  description = "NixOS configuration with Home Manager";
+  description = "NixBS configuration with Home Manager";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-
-    winboat = {
-      url = "github:TibixDev/winboat";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixcord = {
       url = "github:kaylorben/nixcord";
@@ -39,11 +35,26 @@
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, home-manager, sops-nix, ... }@inputs: {
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+    home-manager,
+    sops-nix,
+    nixpkgs-unstable,
+    ... }@inputs: {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        specialArgs = let
+          system = "x86_64-linux";
+        in {
+          inherit inputs;
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+
         modules = [
           ./configuration.nix
           home-manager.nixosModules.home-manager
