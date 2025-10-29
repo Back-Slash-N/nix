@@ -37,7 +37,7 @@
       min_score = 95
 
       [player]
-      default = { ignore = false, app_id = "1121632048155742288", icon = "https://raw.githubusercontent.com/lazykern/mprisence/main/assets/icon.png", show_icon = false, allow_streaming = false }
+      default = { ignore = true, app_id = "1121632048155742288", icon = "https://raw.githubusercontent.com/lazykern/mprisence/main/assets/icon.png", show_icon = false, allow_streaming = false }
 
       [player.supersonic]
       app_id = "1404479711106568202"
