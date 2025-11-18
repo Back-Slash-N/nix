@@ -15,12 +15,6 @@
     policies = {
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
-      EnableTrackingProtection = {
-        Value = true;
-        Locked = true;
-        Cryptomining = true;
-        Fingerprinting = true;
-      };
       DisablePocket = true;
       DisableFirefoxAccounts = true;
       DisableAccounts = true;
@@ -55,7 +49,8 @@
       };
 
       extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
-        ublock-origin
+        # ublock-origin
+        adnauseam
       ];
     };
   };
