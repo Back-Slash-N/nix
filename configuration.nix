@@ -8,7 +8,7 @@
       ./hardware-configuration.nix
       ./system-configuration/bootloader.nix
       ./system-configuration/steam.nix
-      # ./system-configuration/tailscale.nix
+      ./system-configuration/tailscale.nix
       # ./system-configuration/kde.nix
       # ./system-configuration/sddm.nix
       ./system-configuration/virtual-machines.nix
