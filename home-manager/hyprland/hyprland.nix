@@ -198,6 +198,7 @@
         "float, initialTitle:Discord Popout"
         "pin, initialTitle:Discord Popout"
         "size 552 310, initialTitle:Discord Popout"
+        "move -2 -2, initialClass:steam_app_1237970"
       ];
     };
     extraConfig = ''
