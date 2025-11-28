@@ -20,6 +20,12 @@
       ./overlays/freetube.nix
     ];
 
+  # Environment variables that should be set for the whole system.
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1"; #? To encourage electron applications to use Wayland instead of X11
+    WLR_NO_HARDWARE_CURSORS = "1";
+  };
+
   # Shell
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
