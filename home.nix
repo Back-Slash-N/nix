@@ -35,6 +35,11 @@ in
     amplitude # Soundboard
     antimicrox # Game input remapper
     freetube # Youtube without the ads and tracking bs
+    kdePackages.dolphin # File Manager
+    kdePackages.qtsvg # Add support for SVG icons in Dolphin
+    kdePackages.kio-fuse # To mount remote filesystems via FUSE
+    kdePackages.kio-extras # Extra protocols support (sftp, fish and more)
+    kdePackages.ark # Graphical file compression/decompression utility
   ];
 
   imports = [
@@ -43,7 +48,7 @@ in
     ./home-manager/git.nix
     ./home-manager/kitty.nix
     ./home-manager/mprisence.nix
-    ./home-manager/nemo.nix
+    # ./home-manager/nemo.nix
     ./home-manager/nh.nix
     ./home-manager/notification-daemon.nix
     ./home-manager/obs.nix
@@ -54,7 +59,7 @@ in
     ./home-manager/hyprland/hyprland.nix
     # ./home-manager/quickshell/quickshell.nix
     ./home-manager/vscode/vscode.nix
-    ./home-manager/steam/steam.nix
+    # ./home-manager/steam/steam.nix
     ./home-manager/waybar/waybar.nix
     ./home-manager/zsh.nix
   ];
@@ -69,6 +74,38 @@ in
     secrets.discord-token = { path = "${config.sops.defaultSymlinkPath}/discord-token"; };
   };
 
+  #* System Theming
+  # TODO: Themes are not fully applying to all applications (i.e Dolphin)
+  # yoinked from orsells config
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Nightfox-Dark"; #"Breeze-Dark";
+      package = pkgs.nightfox-gtk-theme; #pkgs.kdePackages.breeze-gtk;
+    };
+    iconTheme = {
+      name = "Breeze-Icons";
+      package = pkgs.kdePackages.breeze-icons;
+    };
+  };
+
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+    };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk3";
+    style = {
+      name = "Nightfox-Dark";
+      package = pkgs.nightfox-gtk-theme;
+    };
+  };
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
