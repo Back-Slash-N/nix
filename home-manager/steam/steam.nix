@@ -1,6 +1,6 @@
 # STEAM USER CONFIG
 # yes this is weird.. steam is literally the only user application that needs to be declared through system config.
-# there is also a home configuration for things such as themes/plugins for the Millennium client mod.
+# this is also a home configuration for things such as themes/plugins for the Millennium client mod.
 { ... }:
 {
   # Space Theme
