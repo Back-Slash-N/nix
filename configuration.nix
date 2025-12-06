@@ -130,14 +130,15 @@
     enable = true;
   };
 
+  # iOS blobsaver conf
+  blobsaver.enable = true;
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     wget
     protonup-qt
     gnupg
-    wlx-overlay-s
     ntfs3g # for interacting with NTFS filesystems
-    freerdp
   ];
   # List services that you want to enable:
 
