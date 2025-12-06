@@ -57,7 +57,11 @@
         "[workspace special:magic silent] vesktop"
       ];
 
-      "monitor" = "HDMI-A-1, 1920x1080@60, 0x0, 1";
+      "monitor" = [
+        "HDMI-A-1, 1920x1080@60, 0x0, 1"
+        "HDMI-A-2, 1680x1050@60, -1680x0, 1"
+      ];
+
       "$terminal" = "kitty";
       "$mod" = "alt";
 
@@ -199,6 +203,7 @@
         "pin, initialTitle:Discord Popout"
         "size 552 310, initialTitle:Discord Popout"
         "move -2 -2, initialClass:steam_app_1237970"
+        "move 0 0, initialClass:portal2_linux"
       ];
     };
     extraConfig = ''
@@ -222,6 +227,16 @@
 
       # End of special bind set
       submap = reset
+
+      workspace = 1, monitor:HDMI-A-1
+      workspace = 2, monitor:HDMI-A-1
+      workspace = 3, monitor:HDMI-A-2
+      workspace = 4, monitor:HDMI-A-1
+      workspace = 5, monitor:HDMI-A-1
+      workspace = 6, monitor:HDMI-A-1
+      workspace = 7, monitor:HDMI-A-1
+      workspace = 8, monitor:HDMI-A-1
+      workspace = 9, monitor:HDMI-A-1
     '';
   };
 
