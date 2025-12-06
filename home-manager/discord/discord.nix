@@ -95,7 +95,6 @@
         userVoiceShow.enable = true;
         validReply.enable = true;
         validUser.enable = true;
-        vcNarrator.enable = true;
         viewIcons.enable = true;
         voiceDownload.enable = true;
         volumeBooster.enable = true;
@@ -104,6 +103,11 @@
         webRichPresence.enable = true;
         webScreenShareFixes.enable = true;
         sendTimestamps.enable = true;
+
+        vcNarrator = {
+          enable = true;
+          voice = "English (America)+David espeak-ng";
+        };
 
         customIdle = {
           enable = true;
