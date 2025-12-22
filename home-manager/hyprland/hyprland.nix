@@ -225,6 +225,14 @@
       # Full Screenshot
       bind=, Print, exec, ~/.config/hypr/scripts/screenshot sc
 
+      # Execution
+      bind=, code:87, exec, ~/.discord-slasher.sh 0 # Orsell
+      bind=, code:88, exec, ~/.discord-slasher.sh 1 # Bob
+      bind=, code:89, exec, ~/.discord-slasher.sh 2 # Deepfried
+      bind=, code:83, exec, ~/.discord-slasher.sh 0 1
+      bind=, code:84, exec, ~/.discord-slasher.sh 1 1
+      bind=, code:85, exec, ~/.discord-slasher.sh 2 1
+
       # End of special bind set
       submap = reset
 
