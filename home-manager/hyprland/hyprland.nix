@@ -54,7 +54,7 @@
         "[workspace 1 silent] codium"
         "[workspace 2 silent] firefox"
         "[workspace 5 silent] kitty"
-        "[workspace special:magic silent] vesktop"
+        "[workspace special:magic silent] equibop"
       ];
 
       "monitor" = [
@@ -194,7 +194,7 @@
         "opacity .95 override .95, class:VSCodium"
         "workspace 1, class:VSCodium"
         "bordercolor rgb(6600a1) rgb(ff5100) 0deg rgb(6600a1) rgb(ff5100) 0deg,floating:1"
-        "workspace special:magic, class:vesktop"
+        "workspace special:magic, class:equibop"
         "bordersize 0, pinned:1"
         "float, initialTitle:Picture-in-Picture"
         "pin, initialTitle:Picture-in-Picture"
