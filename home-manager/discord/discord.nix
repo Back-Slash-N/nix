@@ -7,7 +7,7 @@
 
   # vencord theme
   home.file = {
-    ".config/vesktop/themes" = {
+    ".config/equibop/themes" = {
       source = ./theme;
       recursive = true;
     };
@@ -15,25 +15,42 @@
 
   programs.nixcord = {
     enable = true;  # enable Nixcord. Also installs discord package
-    vesktop.enable = true;
-    config = {
+    discord.enable = false;
+    equibop.enable = true;
+
+    equibop.autoscroll.enable = true;
+
+    equibopConfig = {
       # themeLinks = [
       #   "https://raw.githubusercontent.com/Xhylo/Visual-Studio-Code-BD-theme/main/VSC-Cord.theme.css"
       # ];
       enabledThemes = [
         "source.css"
-        "betterusertags.theme.css"
-        "pingedserversfirst.theme.css"
-        "randomfixes.theme.css"
-        "shadows.theme.css"
-        "profilepopout.css"
-        "sidebarcat.css"
-        "transparentfixes.css"
+        # "betterusertags.theme.css"
+        # "pingedserversfirst.theme.css"
+        # "randomfixes.theme.css"
+        # "shadows.theme.css"
+        # "profilepopout.css"
+        # "sidebarcat.css"
+        # "transparentfixes.css"
       ];
-      
+
       plugins = {
         betterGifPicker.enable = true;
         betterSessions.enable = true;
+        hideMedia.enable = true;
+        ignoreTerms.enable = true;
+        blurNSFW.enable = true;
+        noNitroUpsell.enable = true;
+        reviewDB.enable = true;
+        soundBoardLogger.enable = true;
+        voiceMessages.enable = true;
+        whosWatching.enable = true;
+        youtubeDescription.enable = true;
+        toneIndicators.enable = true;
+        splitLargeMessages.enable = true;
+        reverseImageSearch.enable = true;
+        neverPausePreviews.enable = true;
         callTimer.enable = true;
         clearURLs.enable = true;
         disableCallIdle.enable = true;
@@ -55,10 +72,7 @@
         memberCount.enable = true;
         mentionAvatars.enable = true;
         messageLinkEmbeds.enable = true;
-        messageLogger.enable = true;
-        moreCommands.enable = true;
         messageTags.enable = true;
-        moreUserTags.enable = true;
         mutualGroupDMs.enable = true;
         noOnboardingDelay.enable = true;
         noReplyMention.enable = true;
@@ -104,6 +118,16 @@
         webScreenShareFixes.enable = true;
         sendTimestamps.enable = true;
 
+        messageLoggerEnhanced = {
+          enable = true;
+          saveImages = true;
+          ShowWhereMessageIsFrom = true;
+          messageLimit = 0;
+          cacheLimit = 0;
+          attachmentSizeLimitInMegabytes = 0;
+          attachmentFileExtensions = "";
+        };
+
         vcNarrator = {
           enable = true;
           voice = "English (America)+David espeak-ng";
@@ -116,17 +140,11 @@
 
         openInApp = {
           enable = true;
-          steam = true;
-          spotify = false;
-          epic = false;
-          tidal = false;
-          itunes = false;
         };
         
         noPendingCount =  {
           enable = true;
           hideFriendRequestsCount = false;
-          hideMessageRequestCount = false;
         };
       };
       transparent = true;
