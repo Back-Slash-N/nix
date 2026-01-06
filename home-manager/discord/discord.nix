@@ -1,7 +1,8 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 {
 
   imports = [
+    inputs.nixcord.homeModules.nixcord
     ./slasher.nix
   ];
 
@@ -17,7 +18,6 @@
     enable = true;  # enable Nixcord. Also installs discord package
     discord.enable = false;
     equibop.enable = true;
-
     equibop.autoscroll.enable = true;
 
     equibopConfig = {

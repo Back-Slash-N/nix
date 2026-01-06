@@ -1,113 +1,86 @@
 /**
- * @name actuallybasicbackground
- * @author nvhhr
- * @description very simple background css
-*/
+ * @name BasicBackground
+ * @description Allows you to use a Background Image without greatly altering the basic Layout of Discord
+ * @author DevilBro
+ * @version 1.0.5
+ * @authorId 278543574059057154
+ * @invite Jx3TjNS
+ * @donate https://www.paypal.me/MircoWittrien
+ * @patreon https://www.patreon.com/MircoWittrien
+ * @website https://mwittrien.github.io/
+ * @source https://github.com/mwittrien/BetterDiscordAddons/tree/master/Themes/BasicBackground/
+ * @updateUrl https://mwittrien.github.io/BetterDiscordAddons/Themes/BasicBackground/BasicBackground.theme.css
+ * 
+ * @var text				transparencycolor_s		"Transparency Color: [default] = 0, 0, 0"		0, 0, 0
+ * @var range				transparencyalpha_s		"Transparency Alpha: [default] = 0.15"			[0.15, 0, 1, 0.05]
+ * @var text				bordercolor_s			"Border Color: [default] = 0, 0, 0"			0, 0, 0
+ * @var range				messagetransparency_s		"Messages: [default] = 0.5, 0 = No Boxes"		[0.5, 0, 1, 0.05]
+ * @var range				guildchanneltransparency_s	"Guilds/Channels: [default] = 0.15"			[0.15, 0, 1, 0.05]
+ * @var range				chatinputtransparency_s		"Chat Input: [default] = 0"				[0, 0, 1, 0.05]
+ * @var range				memberlisttransparency_s	"Memberlist: [default] = 0"				[0, 0, 1, 0.05]
+ * @var text				accentcolor_s			"Accent Color: [default] = 88, 101, 242"		190, 78, 180
+ * @var checkbox			settingsicons_s			"User Settings Icons"					1
+ * @var text				font_s				"General Font"						"gg sans", "Noto Sans"
+ * @var text				textshadow_s			"Text Shadow: [default] = rgba(0, 0, 0, 0)"		rgba(0, 0, 0, 0)
+ * @var text				background_s			"Background: Can be an Image/Color/Gradient"		url(https://mwittrien.github.io/BetterDiscordAddons/Themes/BasicBackground/_res/background.jpg)
+ * @var select				backgroundposition_s		"Background Position"					["center*", "top", "right", "bottom", "left"]
+ * @var select				backgroundsize_s		"Background Size"					["cover*", "contain", "auto"]
+ * @var range				backgroundblur_s		"Background Blur"					[0, 0, 100, 1]
+ * @var text				popout_s			"Popups BG: Can be an Image/Color/Gradient"		var(--background)
+ * @var select				popoutposition_s		"Popups BG Position"					["center*", "top", "right", "bottom", "left"]
+ * @var select				popoutsize_s			"Popups BG Size"					["cover*", "contain", "auto"]
+ * @var range				popoutblur_s			"Popups BG Blur"					[0, 0, 100, 1]
+ * @var text				backdrop_s			"Backdrop BG: Can be an Image/Color/Gradient"		rgba(0, 0, 0, 0.85)
+ * @var select				backdropposition_s		"Backdrop BG Position"					["center*", "top", "right", "bottom", "left"]
+ * @var select				backdropsize_s			"Backdrop BG Size"					["cover*", "contain", "auto"]
+ * @var range				backdropblur_s			"Backdrop BG Blur"					[0, 0, 100, 1]
+ * @var text				textbrightest_s			"Text Color 1: [default] = 255, 255, 255"		255, 255, 255
+ * @var text				textbrighter_s			"Text Color 2: [default] = 222, 222, 222"		222, 222, 222
+ * @var text				textbright_s			"Text Color 3: [default] = 200, 200, 200"		200, 200, 200
+ * @var text				textdark_s			"Text Color 4: [default] = 160, 160, 160"		160, 160, 160
+ * @var text				textdarker_s			"Text Color 5: [default] = 125, 125, 125"		125, 125, 125
+ * @var text				textdarkest_s			"Text Color 6: [default] = 90, 90, 90"			90, 90, 90
+ */
 
-/*customize these*/
-:root
- { --nvbgimg: url("https://w.wallhaven.cc/full/85/wallhaven-851q5o.jpg");
-   --nvbgadjust: rgb(0 0 0 / .6); /*use this to tone the bg for better visibility*/
-   --scrollbar-thin-track: transparent;
-   --scrollbar-auto-track: transparent; } 
+/* To change stuff like the colors, transparency and background image, change the variables inside the root {}, do NOT change the @import url() */
 
-/*we'll set the background image at the very bottom*/
-body { background: none !important; }
-/*add the toning layer..*/
-#app-mount { background: var(--nvbgadjust) !important; }
+@import "BasicBackground.css";
 
-/*then we clear out backgrounds from a bunch of elements*/
-[class^=app_], /*main app bg*/
-[class^=bg_], /*another bg layer*/
-[class*=guilds_], /*serverlist*/
-[class^=sidebar_], /*channellist*/
-[class^=sidebar_] [class^=container_], /*another layer on channellist*/
-[class^=page_] > [class^=chat_] > section, /*channels & roles top bar*/
-[class^=page_] > [class^=chat_] > [class^=content_], /*channels & roles page*/
-[class^=pageBody_], /*channels & roles channel selection page*/
-[class^=page_] > [class^=chat_], /*members page*/
-[class^=chat_], /*chat bg*/
-[class^=chatContent_], /*another layer on chat*/
-[class^=topicsPillContainer_], /*summaries bar*/
-[class^=chatContent_] + [class^=container_], /*memberlist*/
-[class^=members_], /*another layer on memberlist*/
-[class^=member_], /*each member also has a bg*/
-[class^=chat_] [class^=container_], /*forum channel*/
-[class*=mainCard_], /*forum channel entry*/
-[class^=membersWrap_], /*forum post members*/
-[class^=chatLayerWrapper_] > [class^=resizeHandle_], /*thread sidebar resizer*/
-[class^=chatLayerWrapper_] > [class^=container_], /*thread sidebar*/
-[class^=chatLayerWrapper_] > [class^=container_] > [class^=container_], /*thread sidabar title*/
-[class^=chat_] [class^=wrapper_], /*voicechannel*/
-[class^=callContainer_], /*voicechannel again*/
-[class^=callContainer_] > [class^=root_], /*voicechannel yet again*/
-[class^=gradientBackground_], /*gradients in voicechannel*/
-[class^=gradientBackground_] > [class*=sphere_], /*more gradients in voicechannel*/
-[class^=channelChatWrapper_], /*voicechannel chat*/
-[class^=chatTarget_], /*voicechannel chat again*/
-[class^=channelChatWrapper_] [class^=resizeHandle_], /*voicechannel chat resizer*/
-[class^=channelChatWrapper_] [class^=container_], /*voicechannel chat yet again*/
-[class^=rowContainer_], /*stage channel speakers*/
-[class^=root_] [class^=scroller_], /*stage channel audience*/
-[class^=participants_], /*stage channel audience members background*/
-[class^=participants_] > [class^=tileContainer_], /*stage channel audience member*/
-[class^=container_] > [class^=container_] > section, /*stage channel request to speak top bar*/
-[class^=title_], /*top toolbar*/
-[class^=children_]::after, /*toolbar overflow fadeout*/
-[class^=chatContent_] > [class^=form_], /*chat input area in visual refresh*/
-[class^=channelTextArea_], /*chat input*/
-[class^=channelTextArea_] [class^=scrollableContainer_], /*chat input again*/
-[class^=chatContent_] > form::before, /*wtf even is this and why, discord?*/
-[class^=chatContent_] > form::after, /*weird thing in scrollbar*/
-[data-list-id="chat-messages"] > [class^=wrapper_], /*skeleton before messages are loaded*/
-[data-list-id="chat-messages"] > [class^=wrapper_] > [class^=wrapper_], /*skeleton has many bones in it*/
-[class^=privateChannels_], /*DM list*/
-[class^=privateChannels_] [class^=scroller_], /*DM list again*/
-[class^=page_] [class^=chat_] > section, /*message requests top bar*/
-[class*=userProfileOuterUnthemed_], /*DM right sidebar when user has no profile theme*/
-[class*=userProfileOuterUnthemed_] [class^=userPanelInner_], /*same*/
-[class^=page_] > [class^=container_], /*friends list page*/
-[class^=page_] > [class^=container_] > section, /*friends list top bar*/
-[class^=page_] > [class^=container_] > [class^=tabBody_], /*friends list*/
-[class^=nowPlayingColumn_], /* friends list right sidebar*/
-[class^=nowPlayingColumn_] > [class^=container_], /*yeah*/
-[class^=nowPlayingColumn_] [class^=body_], /*activities have..*/
-[class^=nowPlayingColumn_] [class^=section_], /*..a double background too*/
-[class^=itemCard_], /*friends list activity cards*/
-[class^=shop_], /*shop tab content*/
-[class^=shopViewWrapper_] > section, /*shop top bar*/
-[class^=shopScroll_], /*shop content*/
-[class^=pageWrapper_], /*again*/
-[id^=vc-indicators-indicator-items], /*online friend count if plugin is enabled*/
-[class^=sidebar_]::after, /*tiny little area under the profile display*/
-[class^=layer_],
-[class^=sidebarRegion_], /* settings shit */
-[class^=contentRegion_],
-[class^=contentRegionScroller_], /* main region */
-[class^=sidebarRegionScroller_], /* sidebar region */
-[class^=standardSidebarView_]
- { background: none !important; }
-
-/*remove some shadows*/
-[class^=chat_]::before,
-[class^=header_],
-[class^=content_]::before,
-[class^=tabBody_]::before, /*dm list*/
-[class^=searchBar_] /*dm list search*/
- { box-shadow: none; }
-
-/*fixes*/
-[class^=sidebar_],
-[class^=userPanelInner_]
- { border-radius: 0 !important; }
-[class^=privateChannels_] > [class^=scroller_] /*user panel overlaps DM list*/
- { margin-bottom: 55px; }
-[class^=gradientBackground_]
- { display: none; } /*remove leftover blurred gradient in VCs*/
-[class^=chat_] > [class^=wrapper_]
- { background: var(--background-mod-subtle);
-   border-left: 1px solid var(--border-subtle); }
-
-/*make server banner etc scroll away because of overlap*/
-[class^=sidebar_] [class^=container_]:has( > [class^=header_])
- { position: static; }
+:root {
+	--transparencycolor:		0, 0, 0;			/* default: 0, 0, 0															*/
+	--transparencyalpha:		0.35;				/* default: 0.15				(general darkness of the app)								*/
+	--bordercolor:			0, 0, 0;			/* default: 0, 0, 0				(color of most borders/dividers)							*/
+	--messagetransparency:		0.5;				/* default: 0.5					(additional shadows behind messages, set to 0 to remove boxes)				*/
+	--guildchanneltransparency:	0.15;				/* default: 0.15				(additional darkness for guild/channel list)						*/
+	--chatinputtransparency:	0.0;				/* default: 0.0					(additional darkness for chat input container)						*/
+	--memberlisttransparency:	0.0;				/* default: 0.0					(additional darkness for member list)							*/
+	--accentcolor:			0, 135, 0;			/* default: 190, 78, 180			(RGB-format - blurple: 88, 101, 242 bd-blue: 58, 113, 193)				*/
+	
+	--settingsicons:		1;				/* Use Settings Icons in User Settings: 1 = yes, 0 = no											*/
+	--font:				"gg sans", "Noto Sans";		/* font used in most places														*/
+	--textshadow:			transparent;			/* default: transparent				(textshadow for text ontop of accentcolor nodes, ONLY accepts a color, no px)		*/
+	
+	--background:			transparent;	/* general background image					*/
+	--backgroundposition:		center;				/* default: center				(position of background - values: [center/top/right/bottom/left])			*/
+	--backgroundsize:		cover;				/* default: cover				(sizefit of background - values: [cover/contain/auto])					*/
+	--backgroundblur:		0;				/* default: 0					(blur in px, only works when --background is set to an image)				*/
+	
+	--popout:			var(--background);		/* default: var(--background)			(change to use another background/color for modals/popouts)				*/
+	--popoutposition:		var(--backgroundposition);	/* default: center				(position of popout - values: [center/top/right/bottom/left])				*/
+	--popoutsize:			var(--backgroundsize);		/* default: cover				(sizefit of popout - values: [cover/contain/auto])					*/
+	--popoutblur:			var(--backgroundblur);		/* default: 0					(blur in px, only works when --popout is set to an image)				*/
+	
+	--backdrop:			rgba(0, 0, 0, 0.85);		/* default: rgba(0, 0, 0, 0.85)			(change to use another background/color for backdrops)					*/
+	--backdropposition:		center;				/* default: center				(position of backdrop - values: [center/top/right/bottom/left])				*/
+	--backdropsize:			cover;				/* default: cover				(sizefit of backdrop - values: [cover/contain/auto])					*/
+	--backdropblur:			0;				/* default: 0					(blur in px, only works when --backdrop is set to an image)				*/
+	
+	--textbrightest: 		255, 255, 255;			/* default: 255, 255, 255			(text color for the brightest texts)							*/
+	--textbrighter: 		222, 222, 222;			/* default: 222, 222, 222			(text color for brighter texts)								*/
+	--textbright: 			200, 200, 200;			/* default: 200, 200, 200			(text color for bright texts)								*/
+	--textdark: 			160, 160, 160;			/* default: 160, 160, 160			(text color for dark texts)								*/
+	--textdarker: 			125, 125, 125;			/* default: 125, 125, 125			(text color for darker texts)								*/
+	--textdarkest: 			90, 90, 90;			/* default: 90, 90, 90				(text color for the darkest texts)							*/
+	
+	--version1_0_5:			none;				/* DO NOT CHANGE THIS VARIABLE , USED TO HIDE UPDATE NOTICE										*/
+}

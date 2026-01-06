@@ -22,6 +22,15 @@
             "emoji_id": null,
             "emoji_name": "🦗"
           }'
+
+        sleep 0.5
+        curl 'https://discord.com/api/v9/channels/1272260847674331137/call/ring' \
+          -H 'accept: */*' \
+          -H 'accept-language: en-US' \
+          -H '$DISCORD_TOKEN' \
+          -H 'content-type: application/json' \
+          --data-raw '{"recipients":["''${userids[$1]}"],"analytics_location":"user_context_menu"}'
+
       else
         curl --request POST \
           --url https://discord.com/api/v9/channels/1272260847674331137/send-soundboard-sound \
