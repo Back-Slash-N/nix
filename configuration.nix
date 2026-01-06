@@ -13,6 +13,7 @@
       # ./system-configuration/sddm.nix
       ./system-configuration/virtual-machines.nix
       ./system-configuration/vr.nix
+      # ./system-configuration/playit.nix
       ./system-configuration/greeter/greeter.nix
       ./system-configuration/sops/sops.nix
 

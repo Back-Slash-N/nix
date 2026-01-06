@@ -8,4 +8,5 @@
 
   sops.age.keyFile = "/home/n/.config/sops/age/keys.txt";
   sops.secrets.tailscale = { };
+  sops.secrets.playit-secret = { };
 }
