@@ -7,6 +7,7 @@
       dracula-theme.theme-dracula
       yzhang.markdown-all-in-one
       bbenoist.nix
+	  pkgs.nix-vscode-extensions.open-vsx.jeanp413.open-remote-ssh
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
 	    {
 	      name = "vscript-snippets";
@@ -32,17 +33,12 @@
 	      version = "3.0.2";
 	      sha256 = "hQmA8PWjf2Nd60v5EAuqqD8LIEu7slrNs8luc3ePgZc=";
 	    }
-	    {
-	      name = "remote-ssh";
-	      publisher = "ms-vscode-remote";
-	      version = "0.121.2025071515";
-	      sha256 = "x++DaNxQ80ZQwRNDiWpO9Ygwc5YJeg4lEPcl7Z/DkpI=";
-	    }
     ];
 
     profiles.default.userSettings = {
       "files.autoSave" = "onFocusChange";
 	  "editor.selectionClipboard" = false;
+	  "editor.tabSize" = 2;
     };
   };
 
