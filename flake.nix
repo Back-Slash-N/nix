@@ -7,7 +7,12 @@
     # nixpkgs-fork.url = "/home/n/Documents/git/nixpkgs";
 
     nixcord = {
-      url = "github:kaylorben/nixcord";
+      url = "github:Back-Slash-N/nixcord";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -18,11 +23,6 @@
 
     flake-utils = {
       url = "github:numtide/flake-utils";
-    };
-
-    millennium = {
-      url = "git+https://github.com/Back-Slash-N/Millennium?ref=main";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     firefox-addons = {
@@ -39,6 +39,11 @@
       url = "github:Back-Slash-N/blobsaver";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # playit-nixos-module = {
+    #   url = "github:pedorich-n/playit-nixos-module";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = {
@@ -50,6 +55,8 @@
     home-manager,
     sops-nix,
     blobsaver,
+    nix-vscode-extensions,
+    # playit-nixos-module,
     ... }@inputs: {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
@@ -69,6 +76,7 @@
 
         modules = [
           ./configuration.nix
+          # playit-nixos-module.nixosModules.default
           blobsaver.nixosModules.blobsaver
           home-manager.nixosModules.home-manager
           sops-nix.nixosModules.sops
@@ -78,11 +86,11 @@
             home-manager.useUserPackages = true;
             home-manager.users.n = import ./home.nix;
             home-manager.sharedModules = [
-              inputs.nixcord.homeModules.nixcord
               inputs.sops-nix.homeManagerModule
             ];
             nixpkgs.overlays = [
               blobsaver.overlays.default
+              nix-vscode-extensions.overlays.default
             ];
             home-manager.extraSpecialArgs = { inherit inputs; };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
