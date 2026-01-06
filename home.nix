@@ -40,6 +40,8 @@ in
     kdePackages.kio-fuse # To mount remote filesystems via FUSE
     kdePackages.kio-extras # Extra protocols support (sftp, fish and more)
     kdePackages.ark # Graphical file compression/decompression utility
+    filezilla # FTP/SFTP client
+    protonvpn-gui # VPN
   ];
 
   imports = [
@@ -59,7 +61,6 @@ in
     ./home-manager/hyprland/hyprland.nix
     # ./home-manager/quickshell/quickshell.nix
     ./home-manager/vscode/vscode.nix
-    # ./home-manager/steam/steam.nix
     ./home-manager/waybar/waybar.nix
     ./home-manager/zsh.nix
   ];
