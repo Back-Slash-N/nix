@@ -203,6 +203,7 @@
         "pin, initialTitle:Discord Popout"
         "size 552 310, initialTitle:Discord Popout"
         "move -2 -2, initialClass:steam_app_1237970"
+        "move 0 0, initialClass:steam_app_553850"
         "move 0 0, initialClass:portal2_linux"
       ];
     };
