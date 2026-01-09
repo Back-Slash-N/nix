@@ -1,86 +1,151 @@
 /**
- * @name BasicBackground
- * @description Allows you to use a Background Image without greatly altering the basic Layout of Discord
- * @author DevilBro
- * @version 1.0.5
- * @authorId 278543574059057154
- * @invite Jx3TjNS
- * @donate https://www.paypal.me/MircoWittrien
- * @patreon https://www.patreon.com/MircoWittrien
- * @website https://mwittrien.github.io/
- * @source https://github.com/mwittrien/BetterDiscordAddons/tree/master/Themes/BasicBackground/
- * @updateUrl https://mwittrien.github.io/BetterDiscordAddons/Themes/BasicBackground/BasicBackground.theme.css
- * 
- * @var text				transparencycolor_s		"Transparency Color: [default] = 0, 0, 0"		0, 0, 0
- * @var range				transparencyalpha_s		"Transparency Alpha: [default] = 0.15"			[0.15, 0, 1, 0.05]
- * @var text				bordercolor_s			"Border Color: [default] = 0, 0, 0"			0, 0, 0
- * @var range				messagetransparency_s		"Messages: [default] = 0.5, 0 = No Boxes"		[0.5, 0, 1, 0.05]
- * @var range				guildchanneltransparency_s	"Guilds/Channels: [default] = 0.15"			[0.15, 0, 1, 0.05]
- * @var range				chatinputtransparency_s		"Chat Input: [default] = 0"				[0, 0, 1, 0.05]
- * @var range				memberlisttransparency_s	"Memberlist: [default] = 0"				[0, 0, 1, 0.05]
- * @var text				accentcolor_s			"Accent Color: [default] = 88, 101, 242"		190, 78, 180
- * @var checkbox			settingsicons_s			"User Settings Icons"					1
- * @var text				font_s				"General Font"						"gg sans", "Noto Sans"
- * @var text				textshadow_s			"Text Shadow: [default] = rgba(0, 0, 0, 0)"		rgba(0, 0, 0, 0)
- * @var text				background_s			"Background: Can be an Image/Color/Gradient"		url(https://mwittrien.github.io/BetterDiscordAddons/Themes/BasicBackground/_res/background.jpg)
- * @var select				backgroundposition_s		"Background Position"					["center*", "top", "right", "bottom", "left"]
- * @var select				backgroundsize_s		"Background Size"					["cover*", "contain", "auto"]
- * @var range				backgroundblur_s		"Background Blur"					[0, 0, 100, 1]
- * @var text				popout_s			"Popups BG: Can be an Image/Color/Gradient"		var(--background)
- * @var select				popoutposition_s		"Popups BG Position"					["center*", "top", "right", "bottom", "left"]
- * @var select				popoutsize_s			"Popups BG Size"					["cover*", "contain", "auto"]
- * @var range				popoutblur_s			"Popups BG Blur"					[0, 0, 100, 1]
- * @var text				backdrop_s			"Backdrop BG: Can be an Image/Color/Gradient"		rgba(0, 0, 0, 0.85)
- * @var select				backdropposition_s		"Backdrop BG Position"					["center*", "top", "right", "bottom", "left"]
- * @var select				backdropsize_s			"Backdrop BG Size"					["cover*", "contain", "auto"]
- * @var range				backdropblur_s			"Backdrop BG Blur"					[0, 0, 100, 1]
- * @var text				textbrightest_s			"Text Color 1: [default] = 255, 255, 255"		255, 255, 255
- * @var text				textbrighter_s			"Text Color 2: [default] = 222, 222, 222"		222, 222, 222
- * @var text				textbright_s			"Text Color 3: [default] = 200, 200, 200"		200, 200, 200
- * @var text				textdark_s			"Text Color 4: [default] = 160, 160, 160"		160, 160, 160
- * @var text				textdarker_s			"Text Color 5: [default] = 125, 125, 125"		125, 125, 125
- * @var text				textdarkest_s			"Text Color 6: [default] = 90, 90, 90"			90, 90, 90
- */
+ * @name midnight
+ * @description a dark, customizable discord theme.
+ * @author refact0r
+ * @version 2.1.1
+ * @invite nz87hXyvcy
+ * @website https://github.com/refact0r/midnight-discord
+ * @source https://github.com/refact0r/midnight-discord/blob/master/themes/midnight.theme.css
+ * @authorId 508863359777505290
+ * @authorLink https://www.refact0r.dev
+*/
 
-/* To change stuff like the colors, transparency and background image, change the variables inside the root {}, do NOT change the @import url() */
+/* import theme modules */
+@import "main.css";
 
-@import "BasicBackground.css";
+body {
+    /* font options */
+    --font: ''; /* change to '' for default discord font */
+    --code-font: ''; /* change to '' for default discord font */
+    font-weight: 400; /* normal text font weight. DOES NOT AFFECT BOLD TEXT */
 
+    /* sizes */
+    --gap: 12px; /* spacing between panels */
+    --divider-thickness: 4px; /* thickness of unread messages divider and highlighted message borders */
+    --border-thickness: 1px; /* thickness of borders around main panels. DOES NOT AFFECT OTHER BORDERS */
+
+    /* animation/transition options */
+    --animations: on; /* off: disable animations/transitions, on: enable animations/transitions */
+    --list-item-transition: 0.2s ease; /* transition for list items */
+    --dms-icon-svg-transition: 0.4s ease; /* transition for the dms icon */
+    --border-hover-transition: 0.2s ease; /* transition for borders when hovered */
+
+    /* top bar options */
+    --top-bar-height: var(--gap); /* height of the top bar (discord default is 36px, old discord style is 24px, var(--gap) recommended if button position is set to titlebar) */
+    --top-bar-button-position: titlebar; /* off: default position, hide: hide buttons completely, serverlist: move inbox button to server list, titlebar: move inbox button to channel titlebar (will hide title) */
+    --top-bar-title-position: off; /* off: default centered position, hide: hide title completely, left: left align title (like old discord) */
+    --subtle-top-bar-title: off; /* off: default, on: hide the icon and use subtle text color (like old discord) */
+
+    /* window controls */
+    --custom-window-controls: on; /* off: default window controls, on: custom window controls */
+    --window-control-size: 14px; /* size of custom window controls */
+
+    /* dms button options */
+    --custom-dms-icon: custom; /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
+    --dms-icon-svg-url: url('https://refact0r.github.io/midnight-discord/assets/Font_Awesome_5_solid_moon.svg'); /* icon svg url. MUST BE A SVG. */
+    --dms-icon-svg-size: 90%; /* size of the svg (css mask-size property) */
+    --dms-icon-color-before: var(--icon-subtle); /* normal icon color */
+    --dms-icon-color-after: var(--white); /* icon color when button is hovered/selected */
+    --custom-dms-background: off; /* off to disable, image to use a background image (must set url variable below), color to use a custom color/gradient */
+    --dms-background-image-url: url(''); /* url of the background image */
+    --dms-background-image-size: cover; /* size of the background image (css background-size property) */
+    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2)); /* fixed color/gradient (css background property) */
+
+    /* background image options */
+    --background-image: off; /* off: no background image, on: enable background image (must set url variable below) */
+    --background-image-url: url(''); /* url of the background image */
+
+    /* transparency/blur options */
+    /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); */
+    --transparency-tweaks: on; /* off: no changes, on: remove some elements for better transparency */
+    --remove-bg-layer: on; /* off: no changes, on: remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
+    --panel-blur: on; /* off: no changes, on: blur the background of panels */
+    --blur-amount: 12px; /* amount of blur */
+    --bg-floating: var(--bg-3); /* set this to a more opaque color if floating panels look too transparent. only applies if panel blur is on  */
+
+    /* chatbar options */
+    --custom-chatbar: off; /* off: default chatbar, separated: chatbar separated from chat */
+    --chatbar-height: 47px; /* height of the chatbar (56px by default, 47px to align with user panel, 56px recommended for separated) */
+
+    /* other options */
+    --small-user-panel: on; /* off: default user panel, on: smaller user panel like in old discord */
+}
+
+/* color options */
 :root {
-	--transparencycolor:		0, 0, 0;			/* default: 0, 0, 0															*/
-	--transparencyalpha:		0.35;				/* default: 0.15				(general darkness of the app)								*/
-	--bordercolor:			0, 0, 0;			/* default: 0, 0, 0				(color of most borders/dividers)							*/
-	--messagetransparency:		0.5;				/* default: 0.5					(additional shadows behind messages, set to 0 to remove boxes)				*/
-	--guildchanneltransparency:	0.15;				/* default: 0.15				(additional darkness for guild/channel list)						*/
-	--chatinputtransparency:	0.0;				/* default: 0.0					(additional darkness for chat input container)						*/
-	--memberlisttransparency:	0.0;				/* default: 0.0					(additional darkness for member list)							*/
-	--accentcolor:			0, 135, 0;			/* default: 190, 78, 180			(RGB-format - blurple: 88, 101, 242 bd-blue: 58, 113, 193)				*/
-	
-	--settingsicons:		1;				/* Use Settings Icons in User Settings: 1 = yes, 0 = no											*/
-	--font:				"gg sans", "Noto Sans";		/* font used in most places														*/
-	--textshadow:			transparent;			/* default: transparent				(textshadow for text ontop of accentcolor nodes, ONLY accepts a color, no px)		*/
-	
-	--background:			transparent;	/* general background image					*/
-	--backgroundposition:		center;				/* default: center				(position of background - values: [center/top/right/bottom/left])			*/
-	--backgroundsize:		cover;				/* default: cover				(sizefit of background - values: [cover/contain/auto])					*/
-	--backgroundblur:		0;				/* default: 0					(blur in px, only works when --background is set to an image)				*/
-	
-	--popout:			var(--background);		/* default: var(--background)			(change to use another background/color for modals/popouts)				*/
-	--popoutposition:		var(--backgroundposition);	/* default: center				(position of popout - values: [center/top/right/bottom/left])				*/
-	--popoutsize:			var(--backgroundsize);		/* default: cover				(sizefit of popout - values: [cover/contain/auto])					*/
-	--popoutblur:			var(--backgroundblur);		/* default: 0					(blur in px, only works when --popout is set to an image)				*/
-	
-	--backdrop:			rgba(0, 0, 0, 0.85);		/* default: rgba(0, 0, 0, 0.85)			(change to use another background/color for backdrops)					*/
-	--backdropposition:		center;				/* default: center				(position of backdrop - values: [center/top/right/bottom/left])				*/
-	--backdropsize:			cover;				/* default: cover				(sizefit of backdrop - values: [cover/contain/auto])					*/
-	--backdropblur:			0;				/* default: 0					(blur in px, only works when --backdrop is set to an image)				*/
-	
-	--textbrightest: 		255, 255, 255;			/* default: 255, 255, 255			(text color for the brightest texts)							*/
-	--textbrighter: 		222, 222, 222;			/* default: 222, 222, 222			(text color for brighter texts)								*/
-	--textbright: 			200, 200, 200;			/* default: 200, 200, 200			(text color for bright texts)								*/
-	--textdark: 			160, 160, 160;			/* default: 160, 160, 160			(text color for dark texts)								*/
-	--textdarker: 			125, 125, 125;			/* default: 125, 125, 125			(text color for darker texts)								*/
-	--textdarkest: 			90, 90, 90;			/* default: 90, 90, 90				(text color for the darkest texts)							*/
-	
-	--version1_0_5:			none;				/* DO NOT CHANGE THIS VARIABLE , USED TO HIDE UPDATE NOTICE										*/
+    --colors: on; /* off: discord default colors, on: midnight custom colors */
+
+    /* text colors */
+    --text-0: var(--bg-4); /* text on colored elements */
+    --text-1: hsl(220, 45%, 95%); /* other normally white text */
+    --text-2: hsl(220, 25%, 70%); /* headings and important text */
+    --text-3: hsl(220, 20%, 60%); /* normal text */
+    --text-4: hsl(220, 15%, 40%); /* icon buttons and channels */
+    --text-5: hsl(220, 15%, 25%); /* muted channels/chats and timestamps */
+
+    /* background and dark colors */
+    --bg-1: hsla(220, 15%, 20%, 1); /* dark buttons when clicked */
+    --bg-2: hsla(220, 15%, 16%, 1); /* dark buttons */
+    --bg-3: hsla(220, 15%, 13%, 1); /* spacing, secondary elements */
+    --bg-4: hsla(220, 15%, 10%, 0.8); /* main background color */
+    --hover: hsla(221, 19%, 40%, 0.1); /* channels and buttons when hovered */
+    --active: hsla(220, 19%, 40%, 0.2); /* channels and buttons when clicked or selected */
+    --active-2: hsla(220, 19%, 40%, 0.3); /* extra state for transparent buttons */
+    --message-hover: hsla(220, 0%, 0%, 0.3); /* messages when hovered */
+
+    /* accent colors */
+    --accent-1: var(--blue-1); /* links and other accent text */
+    --accent-2: var(--blue-2); /* small accent elements */
+    --accent-3: var(--blue-3); /* accent buttons */
+    --accent-4: var(--blue-4); /* accent buttons when hovered */
+    --accent-5: var(--blue-5); /* accent buttons when clicked */
+    --accent-new: var(--accent-2); /* stuff that's normally red like mute/deafen buttons */
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent); /* background of messages that mention you */
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent); /* background of messages that mention you when hovered */
+    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent); /* background of messages that reply to you */
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent); /* background of messages that reply to you when hovered */
+
+    /* status indicator colors */
+    --online: var(--green-2); /* change to #40a258 for default */
+    --dnd: var(--red-2); /* change to #d83a41 for default */
+    --idle: var(--yellow-2); /* change to #cc954c for default */
+    --streaming: var(--purple-2); /* change to ##9147ff for default */
+    --offline: var(--text-4); /* change to #82838b for default offline color */
+
+    /* border colors */
+    --border-light: var(--hover); /* general light border color */
+    --border: var(--active); /* general normal border color */
+    --border-hover: var(--active); /* border color of panels when hovered */
+    --button-border: hsl(220, 0%, 100%, 0.1); /* neutral border color of buttons */
+
+    /* base colors */
+    --red-1: oklch(75% 0.12 0);
+    --red-2: oklch(70% 0.12 0);
+    --red-3: oklch(65% 0.12 0);
+    --red-4: oklch(60% 0.12 0);
+    --red-5: oklch(55% 0.12 0);
+
+    --green-1: oklch(75% 0.11 170);
+    --green-2: oklch(70% 0.11 170);
+    --green-3: oklch(65% 0.11 170);
+    --green-4: oklch(60% 0.11 170);
+    --green-5: oklch(55% 0.11 160);
+
+    --blue-1: oklch(75% 0.1 215);
+    --blue-2: oklch(70% 0.1 215);
+    --blue-3: oklch(65% 0.1 215);
+    --blue-4: oklch(60% 0.1 215);
+    --blue-5: oklch(55% 0.1 215);
+
+    --yellow-1: oklch(80% 0.11 90);
+    --yellow-2: oklch(75% 0.11 90);
+    --yellow-3: oklch(70% 0.11 90);
+    --yellow-4: oklch(65% 0.11 90);
+    --yellow-5: oklch(60% 0.11 90);
+
+    --purple-1: oklch(75% 0.11 310);
+    --purple-2: oklch(70% 0.11 310);
+    --purple-3: oklch(65% 0.11 310);
+    --purple-4: oklch(60% 0.11 310);
+    --purple-5: oklch(55% 0.11 310);
 }
