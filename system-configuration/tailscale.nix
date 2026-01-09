@@ -16,7 +16,6 @@
     serviceConfig = {
       Type = "oneshot";
       User = "root";
-      WorkingDirectory = "/var/lib/tailscaleauth";
     };
 
     # have the job run this shell script
