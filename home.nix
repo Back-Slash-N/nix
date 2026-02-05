@@ -24,7 +24,7 @@ in
     lazygit
     sidequest
     uget
-    mpv # Media Player
+    vlc # Media Player
     modrinth-app
     pavucontrol # Volume Control
     kdePackages.kdenlive # Video Editor

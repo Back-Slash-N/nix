@@ -7,10 +7,12 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game T>
     protontricks.enable = true;
   };
-  hardware.steam-hardware.enable = true;
-  hardware.graphics = {
+
+  programs.gamescope = {
     enable = true;
-    enable32Bit = true;
+    capSysNice = false;
   };
+
+  hardware.steam-hardware.enable = true;
   programs.gamemode.enable = true;
 }

@@ -16,11 +16,12 @@
 
   programs.nixcord = {
     enable = true;  # enable Nixcord. Also installs discord package
-    discord.enable = false;
-    equibop.enable = true;
-    equibop.autoscroll.enable = true;
+    # discord.enable = true;
+    # discord.vencord.enable = true;
+    vesktop.enable = true;
+    # equibop.autoscroll.enable = true;
 
-    equibopConfig = {
+    config = {
       # themeLinks = [
       #   "https://raw.githubusercontent.com/Xhylo/Visual-Studio-Code-BD-theme/main/VSC-Cord.theme.css"
       # ];
@@ -36,13 +37,14 @@
       ];
 
       plugins = {
+        messageLogger.enable = true;
         betterGifPicker.enable = true;
         betterSessions.enable = true;
         hideMedia.enable = true;
         ignoreTerms.enable = true;
-        blurNSFW.enable = true;
+        # blurNSFW.enable = true;
         noNitroUpsell.enable = true;
-        reviewDB.enable = true;
+        # reviewDB.enable = true;
         soundBoardLogger.enable = true;
         voiceMessages.enable = true;
         whosWatching.enable = true;
@@ -52,7 +54,7 @@
         reverseImageSearch.enable = true;
         neverPausePreviews.enable = true;
         callTimer.enable = true;
-        clearURLs.enable = true;
+        # clearURLs.enable = true;
         disableCallIdle.enable = true;
         experiments.enable = true;
         fakeNitro.enable = true;
@@ -73,17 +75,17 @@
         mentionAvatars.enable = true;
         messageLinkEmbeds.enable = true;
         messageTags.enable = true;
-        mutualGroupDMs.enable = true;
+        # mutualGroupDMs.enable = true;
         noOnboardingDelay.enable = true;
         noReplyMention.enable = true;
         noUnblockToJump.enable = true;
         normalizeMessageLinks.enable = true;
-        onePingPerDM.enable = true;
+        # onePingPerDM.enable = true;
         pauseInvitesForever.enable = true;
         permissionFreeWill.enable = true;
         permissionsViewer.enable = true;
         pictureInPicture.enable = true;
-        pinDMs.enable = true;
+        # pinDMs.enable = true;
         platformIndicators.enable = true;
         previewMessage.enable = true;
         userMessagesPronouns.enable = true;
@@ -115,17 +117,17 @@
         whoReacted.enable = true;
         youtubeAdblock.enable = true;
         webRichPresence.enable = true;
-        webScreenShareFixes.enable = true;
+        # webScreenShareFixes.enable = true;
         sendTimestamps.enable = true;
 
         messageLoggerEnhanced = {
           enable = true;
-          saveImages = true;
-          ShowWhereMessageIsFrom = true;
-          messageLimit = 0;
-          cacheLimit = 0;
-          attachmentSizeLimitInMegabytes = 0;
-          attachmentFileExtensions = "";
+          # saveImages = true;
+          # ShowWhereMessageIsFrom = true;
+          # messageLimit = 0;
+          # cacheLimit = 0;
+          # attachmentSizeLimitInMegabytes = 0;
+          # attachmentFileExtensions = "";
         };
 
         vcNarrator = {

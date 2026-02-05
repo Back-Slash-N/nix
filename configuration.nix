@@ -8,7 +8,6 @@
       ./hardware-configuration.nix
       ./system-configuration/bootloader.nix
       ./system-configuration/steam.nix
-      ./system-configuration/tailscale.nix
       # ./system-configuration/kde.nix
       # ./system-configuration/sddm.nix
       ./system-configuration/virtual-machines.nix
@@ -45,11 +44,25 @@
   networking.enableIPv6  = false;
   networking.nameservers = [ "192.168.1.56" ];
 
+  # RPI-0w connection
+  # networking.interfaces.enp16s0u2 = {
+  #   ipv4.addresses = [{
+  #     address = "10.0.0.1";
+  #     prefixLength = 24;
+  #   }];
+  # };
+  # boot.blacklistedKernelModules = [ "cdc_ether" "cdc_subset" ];
+  # boot.kernelModules = [ "rndis_host" ];
+  # networking.firewall.trustedInterfaces = [ "enp16s0u2" "usb0" ];
+
   programs.hyprland.enable = true;
 
   security.polkit.enable = true;
   # Set your time zone.
   time.timeZone = "America/New_York";
+
+  # for Hytale
+  services.flatpak.enable = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -68,6 +81,15 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  # Hardware Acceleration
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      rocmPackages.clr.icd  # This is the modern OpenCL driver for AMD
+    ];
+  };
 
   # Enable Bluetooth
   hardware.bluetooth.enable = true;
@@ -101,7 +123,7 @@
     isNormalUser = true;
     initialPassword = "n"; # CHANGE THIS AFTER INSTALL!!
     description = "n";
-    extraGroups = [ "networkmanager" "wheel" "adbusers" "libvirtd" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" "libvirtd" "docker" "kvm" ];
   };
 
   # Enable key-signing
@@ -133,6 +155,8 @@
 
   # iOS blobsaver conf
   blobsaver.enable = true;
+
+  services.tailscale.enable = true;
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [

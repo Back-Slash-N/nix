@@ -40,8 +40,13 @@
       default = { ignore = true, app_id = "1121632048155742288", icon = "https://raw.githubusercontent.com/lazykern/mprisence/main/assets/icon.png", show_icon = false, allow_streaming = false }
 
       [player.supersonic]
+      ignore = false
       app_id = "1404479711106568202"
       icon = "https://github.com/dweymouth/supersonic/blob/main/res/appicon-256.png?raw=true"
+
+      [player.jellyfin]
+      ignore = false
+      icon = "https://avatars.githubusercontent.com/u/45698031?s=48&v=4"
     '';
   };
 }
