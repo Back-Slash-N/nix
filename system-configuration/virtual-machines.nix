@@ -10,11 +10,13 @@
   virtualisation.libvirtd = {
     enable = true;
     qemu = {
-      package = pkgs.qemu_kvm;
+      package = pkgs.qemu_full;
       vhostUserPackages = with pkgs; [ virtiofsd ];
       runAsRoot = true;
     };
   };
+
+  boot.binfmt.emulatedSystems = [ "powerpc64-linux" ];
 
   virtualisation.spiceUSBRedirection.enable = true;
   security.wrappers.spice-client-glib-usb-acl-helper.source = "${pkgs.spice-gtk}/bin/spice-client-glib-usb-acl-helper";

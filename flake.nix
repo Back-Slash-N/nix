@@ -40,6 +40,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    lidarr-bin = {
+      url = "https://github.com/Back-Slash-N/Lidarr/releases/latest/download/lidarr-plugins.tar.gz";
+      flake = false;
+    };
+
+    envFiles = {
+      url = "path:/home/n/nixos/secrets";
+      flake = false;
+    };
+
     # playit-nixos-module = {
     #   url = "github:pedorich-n/playit-nixos-module";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -56,6 +66,8 @@
     sops-nix,
     blobsaver,
     nix-vscode-extensions,
+    lidarr-bin,
+    envFiles,
     # playit-nixos-module,
     ... }@inputs: {
     nixosConfigurations = {

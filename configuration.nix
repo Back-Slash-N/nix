@@ -1,8 +1,11 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, lib, inputs, ... }: {
+{ config, pkgs, lib, inputs, ... }:
+let
+  envFile = "${inputs.envFiles}/slskd.env";
+in
+{
   imports =
     [
       ./hardware-configuration.nix
@@ -12,12 +15,19 @@
       # ./system-configuration/sddm.nix
       ./system-configuration/virtual-machines.nix
       ./system-configuration/vr.nix
+      ./system-configuration/kernel.nix
+      # ./system-configuration/zerotier.nix
+      ./system-configuration/cloudflare-vpn.nix
+      ./system-configuration/lidarr.nix
+      ./system-configuration/slskd.nix
+      ./system-configuration/navidrome.nix
       # ./system-configuration/playit.nix
       ./system-configuration/greeter/greeter.nix
       ./system-configuration/sops/sops.nix
 
       # Overlays
       ./overlays/freetube.nix
+      ./overlays/lidarr.nix
     ];
 
   # Environment variables that should be set for the whole system.
@@ -43,17 +53,6 @@
   networking.wireless.iwd.enable = true;
   networking.enableIPv6  = false;
   networking.nameservers = [ "192.168.1.56" ];
-
-  # RPI-0w connection
-  # networking.interfaces.enp16s0u2 = {
-  #   ipv4.addresses = [{
-  #     address = "10.0.0.1";
-  #     prefixLength = 24;
-  #   }];
-  # };
-  # boot.blacklistedKernelModules = [ "cdc_ether" "cdc_subset" ];
-  # boot.kernelModules = [ "rndis_host" ];
-  # networking.firewall.trustedInterfaces = [ "enp16s0u2" "usb0" ];
 
   programs.hyprland.enable = true;
 
@@ -164,6 +163,7 @@
     protonup-qt
     gnupg
     ntfs3g # for interacting with NTFS filesystems
+    cifs-utils # mounting smb
   ];
   # List services that you want to enable:
 

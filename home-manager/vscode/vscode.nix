@@ -2,12 +2,12 @@
 {
   programs.vscode = {
     enable = true;
-	package = pkgs.vscodium;
+		# package = pkgs.vscodium;
     profiles.default.extensions = with pkgs.vscode-extensions; [
       dracula-theme.theme-dracula
       yzhang.markdown-all-in-one
       bbenoist.nix
-	  pkgs.nix-vscode-extensions.open-vsx.jeanp413.open-remote-ssh
+	  # pkgs.nix-vscode-extensions.open-vsx.jeanp413.open-remote-ssh
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
 	    {
 	      name = "vscript-snippets";
@@ -39,6 +39,7 @@
       "files.autoSave" = "onFocusChange";
 	  "editor.selectionClipboard" = false;
 	  "editor.tabSize" = 2;
+		"chat.disableAIFeatures" = true;
     };
   };
 

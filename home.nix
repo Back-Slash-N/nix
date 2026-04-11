@@ -42,6 +42,8 @@ in
     kdePackages.ark # Graphical file compression/decompression utility
     filezilla # FTP/SFTP client
     protonvpn-gui # VPN
+    devbox # dev environments
+    jetbrains.clion # CMake IDE
   ];
 
   imports = [
@@ -106,6 +108,11 @@ in
       name = "Nightfox-Dark";
       package = pkgs.nightfox-gtk-theme;
     };
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
   };
 
   # This value determines the home Manager release that your

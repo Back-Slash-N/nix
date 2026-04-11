@@ -15,6 +15,12 @@
     executable = true;
   };
 
+  # OBS clip notification
+  home.file.".scripts/obs-notify.sh" = {
+    source = ./obs-notify.sh;
+    executable = true;
+  };
+
   home.packages = with pkgs; [
     hyprpolkitagent # Authentication Manager
     mpvpaper # Video Wallpaper Manager
@@ -80,6 +86,7 @@
 
         # OBS Clip Hotkey
         ", F8, pass, class:^(com\.obsproject\.Studio)$"
+        ", F8, exec, ~/.scripts/obs-notify.sh"
 
         # Fullscreen application
         "alt, F11, fullscreen, 1"
@@ -222,6 +229,8 @@
 
       # OBS Clip Hotkey
       bind=, F8, pass, class:^(com\.obsproject\.Studio)$
+      bind=, F8, exec, ~/.scripts/obs-notify.sh
+
 
       # Full Screenshot
       bind=, Print, exec, ~/.config/hypr/scripts/screenshot sc
