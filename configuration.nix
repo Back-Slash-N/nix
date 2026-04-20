@@ -2,9 +2,6 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 { config, pkgs, lib, inputs, ... }:
-let
-  envFile = "${inputs.envFiles}/slskd.env";
-in
 {
   imports =
     [
@@ -28,6 +25,7 @@ in
       # Overlays
       ./overlays/freetube.nix
       ./overlays/lidarr.nix
+      ./overlays/sddm-astronaut.nix
     ];
 
   # Environment variables that should be set for the whole system.

@@ -1,33 +1,34 @@
-{pkgs, lib, ...}:
-# let
-#   lockscreen-image = pkgs.stdenvNoCC.mkDerivation {
-#     name = "image";
-#     src = ../wallpapers/lockscreen.png;
-#     dontUnpack = true;
-#     installPhase = ''
-#       cp $src $out
-#     '';
-#   };
-# in
-{
-  # Login manager configuration
-  services.displayManager = {
-    enable = true;
-    cosmic-greeter = {
-      enable = true;
-      # theme = "breeze";
-      # wayland.enable = true;
-      # package = pkgs.sddm;
+{lib, config, pkgs, ...}:
+let
+  custom-sddm-astronaut = pkgs.sddm-astronaut.override {
+    embeddedTheme = "hyprland_kath";
+    themeConfig = {
+      HourFormat = "hh:mm ap";
     };
   };
-  # environment.etc."greetd/gtkgreet.toml" = {
-  #   text = ''
-  #     window {
-  #       background-image: url("file://${lockscreen-image}");
-  #       background-size: cover;
-  #       background-position: center;
-  #     }
-  #   '';
-  # };
-  # systemd.services.displayManager
+in
+{
+  environment.systemPackages = [
+    custom-sddm-astronaut
+  ];
+
+  fonts.fontconfig.localConf = ''
+    <?xml version="1.0"?>
+    <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
+    <fontconfig>
+      <dir>/run/current-system/sw/share/sddm/themes/sddm-astronaut-theme/Fonts</dir>
+    </fontconfig>
+  '';
+
+  services.displayManager.sddm = {
+    enable = true;
+    theme = "sddm-astronaut-theme";
+
+    # Enables experimental Wayland support
+    wayland.enable = true;
+
+    extraPackages = with pkgs; [
+      kdePackages.qtmultimedia
+    ];
+  };
 }
