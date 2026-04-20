@@ -41,18 +41,18 @@
         betterGifPicker.enable = true;
         betterSessions.enable = true;
         hideMedia.enable = true;
-        ignoreTerms.enable = true;
+        # ignoreTerms.enable = true;
         # blurNSFW.enable = true;
-        noNitroUpsell.enable = true;
+        # noNitroUpsell.enable = true;
         # reviewDB.enable = true;
-        soundBoardLogger.enable = true;
+        # soundBoardLogger.enable = true;
         voiceMessages.enable = true;
-        whosWatching.enable = true;
-        youtubeDescription.enable = true;
-        toneIndicators.enable = true;
-        splitLargeMessages.enable = true;
+        # whosWatching.enable = true;
+        # youtubeDescription.enable = true;
+        # toneIndicators.enable = true;
+        # splitLargeMessages.enable = true;
         reverseImageSearch.enable = true;
-        neverPausePreviews.enable = true;
+        # neverPausePreviews.enable = true;
         callTimer.enable = true;
         # clearURLs.enable = true;
         disableCallIdle.enable = true;
@@ -74,12 +74,12 @@
         memberCount.enable = true;
         mentionAvatars.enable = true;
         messageLinkEmbeds.enable = true;
-        messageTags.enable = true;
+        # messageTags.enable = true;
         # mutualGroupDMs.enable = true;
         noOnboardingDelay.enable = true;
         noReplyMention.enable = true;
         noUnblockToJump.enable = true;
-        normalizeMessageLinks.enable = true;
+        # normalizeMessageLinks.enable = true;
         # onePingPerDM.enable = true;
         pauseInvitesForever.enable = true;
         permissionFreeWill.enable = true;
@@ -121,7 +121,7 @@
         sendTimestamps.enable = true;
 
         messageLoggerEnhanced = {
-          enable = true;
+          # enable = true;
           # saveImages = true;
           # ShowWhereMessageIsFrom = true;
           # messageLimit = 0;
@@ -132,7 +132,7 @@
 
         vcNarrator = {
           enable = true;
-          voice = "English (America)+David espeak-ng";
+          voice = {name = "English (America)+David espeak-ng";};
         };
 
         customIdle = {
