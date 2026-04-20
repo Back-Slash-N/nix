@@ -33,6 +33,12 @@
 	      version = "3.0.2";
 	      sha256 = "hQmA8PWjf2Nd60v5EAuqqD8LIEu7slrNs8luc3ePgZc=";
 	    }
+	    {
+	      name = "angel-lsp";
+	      publisher = "sashi0034";
+	      version = "0.3.93";
+	      sha256 = "sha256-iU5pIOtBeXErvKmfzu8tpWDm955PnzOuokVWD3CELz4=";
+	    }
     ];
 
     profiles.default.userSettings = {
