@@ -1,4 +1,4 @@
-{...}:
+{ lib, ... }:
 {
   services.navidrome = {
     enable = true;

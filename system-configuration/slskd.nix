@@ -1,4 +1,7 @@
-{...}:
+{inputs, ...}:
+let
+  envFile = "${inputs.envFiles}/slskd.env";
+in
 {
   services.slskd = {
     enable = true;
