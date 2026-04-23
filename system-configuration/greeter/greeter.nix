@@ -8,8 +8,9 @@ let
   };
 in
 {
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     custom-sddm-astronaut
+    labwc
   ];
 
   fonts.fontconfig.localConf = ''
@@ -25,7 +26,15 @@ in
     theme = "sddm-astronaut-theme";
 
     # Enables experimental Wayland support
-    wayland.enable = true;
+    wayland = {
+      enable = true;
+      # compositor = "kwin";
+    };
+    settings = {
+      Wayland = {
+        CompositorCommand = "${pkgs.labwc}/bin/labwc -s sddm-greeter-qt";
+      };
+    };
 
     extraPackages = with pkgs; [
       kdePackages.qtmultimedia
