@@ -10,7 +10,8 @@ in
 {
   environment.systemPackages = with pkgs; [
     custom-sddm-astronaut
-    labwc
+    labwc # TODO: check back on this later when the following AMDGPU patch makes it into the kernel
+          # TODO: https://gitlab.freedesktop.org/agd5f/linux/-/commit/4c1432de3bdae3deae92b2e832183bff6238d19c
   ];
 
   fonts.fontconfig.localConf = ''

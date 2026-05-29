@@ -34,6 +34,13 @@
         "services.sync.prefs.sync.browser.newtabpage.activity-stream.section.topstories.rows" = "0";
         "services.sync.prefs.sync.browser.newtabpage.activity-stream.feeds.section.topstories" = lock-false;
       };
+
+      ExtensionSettings = {
+        "extension@tabliss-maintained" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/tablissng/latest.xpi";
+          installation_mode = "force_installed";
+        };
+      };
     };
 
     profiles.n = {

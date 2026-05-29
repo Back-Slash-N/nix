@@ -1,5 +1,6 @@
 { config
 , pkgs
+, pkgs-fork
 , inputs
 , lib
 , sops-nix
@@ -24,6 +25,9 @@ in
     lazygit
     sidequest
     uget
+    feather
+    p2pool
+    xmrig
     vlc # Media Player
     modrinth-app
     pavucontrol # Volume Control
@@ -44,6 +48,9 @@ in
     protonvpn-gui # VPN
     devbox # dev environments
     jetbrains.clion # CMake IDE
+    pkgs-fork.ryubing # Switch EMU
+    davinci-resolve # Video editor
+
   ];
 
   imports = [

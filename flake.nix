@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    # nixpkgs-fork.url = "/home/n/Documents/git/nixpkgs";
+    nixpkgs-fork.url = "github:Back-Slash-N/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -60,7 +60,7 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
-    # nixpkgs-fork,
+    nixpkgs-fork,
     flake-utils,
     home-manager,
     sops-nix,
@@ -80,10 +80,10 @@
             inherit system;
             config.allowUnfree = true;
           };
-          # pkgs-fork = import nixpkgs-fork {
-          #   inherit system;
-          #   config.allowUnfree = true;
-          # };
+          pkgs-fork = import nixpkgs-fork {
+            inherit system;
+            config.allowUnfree = true;
+          };
         };
 
         modules = [
@@ -104,7 +104,13 @@
               blobsaver.overlays.default
               nix-vscode-extensions.overlays.default
             ];
-            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+              pkgs-fork = import nixpkgs-fork {
+                system = "x86_64-linux";
+                config.allowUnfree = true;
+              };
+            };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
         ];
