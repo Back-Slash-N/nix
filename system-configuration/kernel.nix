@@ -10,12 +10,18 @@
     "msr"
   ];
 
-  boot.kernel.sysctl = {
-    "vm.nr_hugepages" = 1280;
-  };
+  # boot.kernel.sysctl = {
+  #   "vm.nr_hugepages" = 1280;
+  # };
 
   services.xserver.videoDrivers = [ "amdgpu" ];
   hardware.graphics.enable = true;
   boot.blacklistedKernelModules = [ "rtw_8821cu" ];
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.kernelParams = [
+    "hugepagesz=1G"
+    "hugepages=3"
+    "hugepagesz=2M"
+    "hugepages=1280"
+    "msr.allow_writes=on"
+  ];
 }

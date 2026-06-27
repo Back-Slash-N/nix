@@ -50,7 +50,6 @@ in
     jetbrains.clion # CMake IDE
     pkgs-fork.ryubing # Switch EMU
     davinci-resolve # Video editor
-
   ];
 
   imports = [

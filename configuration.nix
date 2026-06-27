@@ -18,6 +18,7 @@
       ./system-configuration/lidarr.nix
       ./system-configuration/slskd.nix
       ./system-configuration/navidrome.nix
+      # ./system-configuration/foldingathome.nix
       # ./system-configuration/playit.nix
       ./system-configuration/greeter/greeter.nix
       ./system-configuration/sops/sops.nix
@@ -25,6 +26,7 @@
       # Overlays
       ./overlays/freetube.nix
       ./overlays/lidarr.nix
+      # ./overlays/ryubing.nix
       ./overlays/sddm-astronaut.nix
     ];
 
@@ -33,6 +35,8 @@
     NIXOS_OZONE_WL = "1"; #? To encourage electron applications to use Wayland instead of X11
     WLR_NO_HARDWARE_CURSORS = "1";
   };
+
+  services.usbmuxd.enable = true;
 
   # Shell
   programs.zsh.enable = true;
@@ -84,9 +88,20 @@
     enable = true;
     enable32Bit = true;
     extraPackages = with pkgs; [
-      rocmPackages.clr.icd  # This is the modern OpenCL driver for AMD
+      rocmPackages.clr.icd
+      rocmPackages.clr
     ];
   };
+  hardware.amdgpu.opencl.enable = true;
+  services.hardware.openrgb = {
+    enable = true;
+    package = pkgs.openrgb-with-all-plugins;
+    motherboard = "amd";
+    server.port = 6742;
+  };
+
+  boot.kernelModules = [ "i2c-dev" ];
+  hardware.i2c.enable = true;
 
   # Enable Bluetooth
   hardware.bluetooth.enable = true;
@@ -150,6 +165,8 @@
     enable = true;
   };
 
+  services.lact.enable = true; # GPU under/overclocking configuration
+
   # iOS blobsaver conf
   blobsaver.enable = true;
 
@@ -162,6 +179,12 @@
     gnupg
     ntfs3g # for interacting with NTFS filesystems
     cifs-utils # mounting smb
+    libimobiledevice
+    sshuttle
+    libusbmuxd
+    proxychains-ng
+    docker-compose
+    nfs-utils
   ];
   # List services that you want to enable:
 

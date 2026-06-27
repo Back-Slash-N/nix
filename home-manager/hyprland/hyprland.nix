@@ -212,6 +212,9 @@
         "move -2 -2, initialClass:steam_app_1237970"
         "move 0 0, initialClass:steam_app_553850"
         "move 0 0, initialClass:portal2_linux"
+        "move 0 0, initialClass:portal2_linux"
+        "float, initialClass:gamescope"
+        "move 0 -19, initialClass:gamescope"
       ];
     };
     extraConfig = ''
