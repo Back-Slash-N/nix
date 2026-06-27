@@ -4,6 +4,7 @@ let
     embeddedTheme = "hyprland_kath";
     themeConfig = {
       HourFormat = "hh:mm ap";
+      Background = "${../../wallpapers/Newts_final.mp4}";
     };
   };
 in
