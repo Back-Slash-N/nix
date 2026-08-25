@@ -1,9 +1,14 @@
 { inputs, ... }: {
   nixpkgs.overlays = [
     (final: prev: {
-      lidarr = prev.lidarr.overrideAttrs (old: {
-        src = inputs.lidarr-bin;
-        version = "plugin-" + (builtins.substring 11 18 inputs.lidarr-bin.outPath);
+      lidarr = prev.lidarr.overrideAttrs (oldAttrs: {
+        src = final.fetchFromGitHub {
+          owner = "Lidarr";
+          repo = "Lidarr";
+          rev = "e42a7ca4fd633e021d69da7daa0368b870b0282e";
+          hash = "sha256-vjLoMU7Ow9rFFcZjCUvqoKZnrmg3TeB8Cqh1nSF8shM=";
+        };
+        doCheck = false;
       });
     })
   ];

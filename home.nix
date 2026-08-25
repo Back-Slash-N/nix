@@ -50,6 +50,7 @@ in
     jetbrains.clion # CMake IDE
     pkgs-fork.ryubing # Switch EMU
     davinci-resolve # Video editor
+    orca-slicer # 3D Printing
   ];
 
   imports = [
@@ -69,7 +70,7 @@ in
     ./home-manager/hyprland/hyprland.nix
     # ./home-manager/quickshell/quickshell.nix
     ./home-manager/vscode/vscode.nix
-    ./home-manager/waybar/waybar.nix
+    # ./home-manager/waybar/waybar.nix
     ./home-manager/zsh.nix
   ];
 

@@ -14,12 +14,9 @@
       ./system-configuration/vr.nix
       ./system-configuration/kernel.nix
       # ./system-configuration/zerotier.nix
-      ./system-configuration/cloudflare-vpn.nix
       ./system-configuration/lidarr.nix
       ./system-configuration/slskd.nix
       ./system-configuration/navidrome.nix
-      # ./system-configuration/foldingathome.nix
-      # ./system-configuration/playit.nix
       ./system-configuration/greeter/greeter.nix
       ./system-configuration/sops/sops.nix
 
@@ -52,7 +49,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.wireless.iwd.enable = true;
   networking.enableIPv6  = false;
   networking.nameservers = [ "192.168.1.56" ];
 
@@ -154,15 +150,13 @@
     enableSSHSupport = false;
   };
 
-  programs.adb.enable = true;
-
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     skia
   ];
 
   virtualisation.docker = {
-    enable = true;
+    enable = false;
   };
 
   services.lact.enable = true; # GPU under/overclocking configuration
@@ -185,6 +179,8 @@
     proxychains-ng
     docker-compose
     nfs-utils
+    android-tools
+    wireguard-tools
   ];
   # List services that you want to enable:
 

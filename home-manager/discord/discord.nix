@@ -65,7 +65,7 @@
         fixYoutubeEmbeds.enable = true;
         forceOwnerCrown.enable = true;
         friendInvites.enable = true;
-        friendsSince.enable = true;
+        # friendsSince.enable = true;
         gameActivityToggle.enable = true;
         gifPaste.enable = true;
         greetStickerPicker.enable = true;
@@ -132,7 +132,7 @@
 
         vcNarrator = {
           enable = true;
-          voice = {name = "English (America)+David espeak-ng";};
+          voice = "English (America)+David espeak-ng";
         };
 
         customIdle = {

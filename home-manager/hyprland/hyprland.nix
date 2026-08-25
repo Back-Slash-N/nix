@@ -57,10 +57,7 @@
         "systemctl --user start hyprpolkitagent"
         "~/.wallpapers/wallpaper-d.sh"
         "mprisence"
-        "[workspace 1 silent] codium"
-        "[workspace 2 silent] firefox"
         "[workspace 5 silent] kitty"
-        "[workspace special:magic silent] equibop"
       ];
 
       "monitor" = [
@@ -198,23 +195,26 @@
       };
 
       windowrule = [
-        "opacity .95 override .95, class:VSCodium"
-        "workspace 1, class:VSCodium"
-        "bordercolor rgb(6600a1) rgb(ff5100) 0deg rgb(6600a1) rgb(ff5100) 0deg,floating:1"
-        "workspace special:magic, class:equibop"
-        "bordersize 0, pinned:1"
-        "float, initialTitle:Picture-in-Picture"
-        "pin, initialTitle:Picture-in-Picture"
-        "size 552 310, initialTitle:Picture-in-Picture"
-        "float, initialTitle:Discord Popout"
-        "pin, initialTitle:Discord Popout"
-        "size 552 310, initialTitle:Discord Popout"
-        "move -2 -2, initialClass:steam_app_1237970"
-        "move 0 0, initialClass:steam_app_553850"
-        "move 0 0, initialClass:portal2_linux"
-        "move 0 0, initialClass:portal2_linux"
-        "float, initialClass:gamescope"
-        "move 0 -19, initialClass:gamescope"
+        "match:class VSCodium, opacity .95 override .95"
+        "match:class VSCodium, workspace 1"
+        "match:float on, border_color rgb(6600a1) rgb(ff5100) 0deg rgb(6600a1) rgb(ff5100) 0deg"
+        "match:class equibop, workspace special:magic"
+        "match:pin on, border_size 0"
+        "match:initial_title Picture-in-Picture, float on"
+        "match:initial_title Picture-in-Picture, pin on"
+        "match:initial_title Picture-in-Picture, size 552 310"
+        "match:initial_title Discord Popout, float on"
+        "match:initial_title Discord Popout pin on"
+        "match:initial_title Discord Popout, size 552 310"
+        "match:initial_class steam_app_1237970, move -2 -2"
+        "match:initial_class steam_app_553850, move 0 0"
+        "match:initial_class portal2_linux, move 0 0"
+        "match:initial_class portal2_linux, move 0 0"
+        "match:initial_class gamescope, float on"
+        "match:initial_class gamescope, move 0 -19"
+        # windowrule = focus_on_activate 0, match:initial_class ^gimp$, match:initial_title ^(Change .* Color)$
+        # "match:initial_class ^gimp$, match:initial_title ^(Change .* Color)$, focus_on_activate 0"
+        "match:initial_class ^gimp$, focus_on_activate 0"
       ];
     };
     extraConfig = ''
